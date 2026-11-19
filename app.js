@@ -7,7 +7,7 @@
   var T = {
     ko: {
       counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상 보기', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
-      sermonsAt: '전체 말씀 · 대강당', nextSermon: '다음 말씀', viewDay: '날짜별 보기', viewTable: '전체 일정표', tableNote: '시간은 오후·오전 표시 없이 줄였습니다. 칸을 누르면 그날 자세한 일정으로 갑니다.',
+      soonIn: '{n}분 후 시작', sermonsAt: '전체 말씀 · 대강당', nextSermon: '다음 말씀', viewDay: '날짜별 보기', viewTable: '전체 일정표', tableNote: '시간은 오후·오전 표시 없이 줄였습니다. 칸을 누르면 그날 자세한 일정으로 갑니다.',
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
@@ -28,7 +28,7 @@
     },
     en: {
       counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch the promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
-      sermonsAt: 'Main Sermons · Main Hall', nextSermon: 'Next', viewDay: 'By day', viewTable: 'Full table', tableNote: 'Times are shortened (no AM/PM). Tap a cell to see that day in detail.',
+      soonIn: 'Starts in {n} min', sermonsAt: 'Main Sermons · Main Hall', nextSermon: 'Next', viewDay: 'By day', viewTable: 'Full table', tableNote: 'Times are shortened (no AM/PM). Tap a cell to see that day in detail.',
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
@@ -49,7 +49,7 @@
     },
     es: {
       counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Ver video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
-      sermonsAt: 'Sermones · Salón Principal', nextSermon: 'Próximo', viewDay: 'Por día', viewTable: 'Tabla completa', tableNote: 'Horas abreviadas (sin a. m./p. m.). Toque una celda para ver el día en detalle.',
+      soonIn: 'Empieza en {n} min', sermonsAt: 'Sermones · Salón Principal', nextSermon: 'Próximo', viewDay: 'Por día', viewTable: 'Tabla completa', tableNote: 'Horas abreviadas (sin a. m./p. m.). Toque una celda para ver el día en detalle.',
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
@@ -70,7 +70,7 @@
     },
     zh: {
       counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 YouTube 中打开',
-      sermonsAt: '全体话语 · 大礼堂', nextSermon: '下一场', viewDay: '按日期', viewTable: '总日程表', tableNote: '时间已简写（不标上午/下午）。点一下即可查看当天详细日程。',
+      soonIn: '{n}分钟后开始', sermonsAt: '全体话语 · 大礼堂', nextSermon: '下一场', viewDay: '按日期', viewTable: '总日程表', tableNote: '时间已简写（不标上午/下午）。点一下即可查看当天详细日程。',
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
@@ -271,12 +271,19 @@
     return { phase: 'during', n: n, day: idx, cur: cur, next: nxt };
   }
 
+  var SOON = 30;   // 말씀 시작 몇 분 전부터 「⏰ ○분 후 시작」을 보여 줄지
+  // 다시 그려야 하는지 판단: 지금/다음이 바뀌거나, 말씀 30분 전부터는 1분마다
+  function sigOf(st) {
+    var soon = '';
+    if (st.phase === 'during') R.days[st.day].items.forEach(function (it) { var l = toMin(it.s) - st.n.min; if (it.k === 'sermon' && l > 0 && l <= SOON) soon = l; });
+    return st.phase + st.day + '/' + st.cur + '/' + st.next + '/' + soon;
+  }
   function renderSchedule() {
     var st = status();
     // 날짜 탭: 직접 고르지 않았으면 항상 「오늘」을 따라감 (자정이 지나도 자동으로 다음 날)
     if (st.n.date !== state.lastDate) { state.lastDate = st.n.date; state.dayPicked = false; }   // 날짜가 바뀌면 (27→28→29일) 그날 일정으로 자동 이동
     if (!state.dayPicked) state.day = st.phase === 'during' ? st.day : st.phase === 'after' ? 2 : 0;
-    state.sig = st.phase + st.day + '/' + st.cur + '/' + st.next;
+    state.sig = sigOf(st);
     // 수련회 기간에는 큰 그림을 줄여 「지금 / 다음」이 첫 화면에 보이게
     $('hero').classList.toggle('compact', st.phase === 'during');
     $('heroTitle').textContent = x(R.title);
@@ -299,8 +306,9 @@
       var b = st.next !== -1 ? items[st.next] : null, bDay = '';
       if (!b && R.days[st.day + 1]) { b = R.days[st.day + 1].items[0]; bDay = x(R.days[st.day + 1].tab) + ' '; }   // 오늘 끝났으면 내일 첫 일정
       if (b) {
-        var bi = itemInfo(b);
-        h += '<div class="now-row"><span class="now-k">' + esc(t('next')) + '</span><span class="now-t">' + (bi.label ? '<small>' + esc(bi.label) + '</small>' : '') + esc(bi.title) + '</span><span class="now-time"><span class="nw">' + esc(bDay) + '</span>' + tm(b.s, b.e) + (bi.place ? '<span class="now-place">' + ico('pin') + bi.place + '</span>' : '') + '</span></div>';
+        var bi = itemInfo(b), bl = !bDay ? toMin(b.s) - st.n.min : 9999;
+        var soonHtml = bl > 0 && bl <= SOON ? '<span class="now-soon">⏰ ' + esc(fmt(t('soonIn'), { n: bl })) + '</span>' : '';
+        h += '<div class="now-row"><span class="now-k">' + esc(t('next')) + '</span><span class="now-t">' + soonHtml + (bi.label ? '<small>' + esc(bi.label) + '</small>' : '') + esc(bi.title) + '</span><span class="now-time"><span class="nw">' + esc(bDay) + '</span>' + tm(b.s, b.e) + (bi.place ? '<span class="now-place">' + ico('pin') + bi.place + '</span>' : '') + '</span></div>';
       }
       if (!h) h = '<p class="now-done">' + esc(t('nowDone')) + '</p>';
       nc.innerHTML = h; nc.hidden = false;
@@ -349,7 +357,11 @@
         var cls = '', tag = '';
         if (endKey <= nowKey) cls = 'past';
         else if (startKey <= nowKey) { cls = 'live'; tag = '<span class="sq-tag live-tag"><span class="dot"></span>' + esc(t('now')) + '</span>'; nextFound = true; }
-        else if (!nextFound) { nextFound = true; cls = 'next'; tag = '<span class="sq-tag">' + esc(t('nextSermon')) + '</span>'; }
+        else if (!nextFound) {
+          nextFound = true; cls = 'next'; tag = '<span class="sq-tag">' + esc(t('nextSermon')) + '</span>';
+          var left = d.date === st.n.date ? toMin(it.s) - st.n.min : 9999;   // 30분 전부터 남은 시간 표시
+          if (left > 0 && left <= SOON) { cls = 'next soon'; tag = '<span class="sq-tag soon-tag">⏰ ' + esc(fmt(t('soonIn'), { n: left })) + '</span>'; }
+        }
         return '<li class="' + cls + '"><button type="button" data-goday="' + di + '"><span class="sq-when"><b class="nw">' + esc(x(d.tab)) + '</b> ' + tm(it.s, it.e) + '</span>' +
           '<span class="sq-what"><small>' + it.n + '</small><b>' + esc(x(s.title)) + '</b>' + tag + '</span><span class="sq-who">' + xb(s.speaker) + '</span></button></li>';
       }).join('');
@@ -569,7 +581,7 @@
   document.addEventListener('visibilitychange', onResume);
   window.addEventListener('pageshow', function (e) { if (e.persisted) onResume(); });
   window.addEventListener('focus', function () { if (Date.now() - lastResume > 60000) onResume(); });
-  setInterval(function () { if (document.hidden || state.view !== 'schedule') return; var st = status(); if (st.phase + st.day + '/' + st.cur + '/' + st.next !== state.sig) renderSchedule(); }, 60000);   // 1분마다 「지금」 갱신
+  setInterval(function () { if (document.hidden || state.view !== 'schedule') return; var st = status(); if (sigOf(st) !== state.sig) renderSchedule(); }, 30000);   // 1분마다 「지금」 갱신
   setTimeout(function () { readSigs().then(function (s) { fileSigs = s; }); }, 1500);
   if (store('rt_updated')) { try { localStorage.removeItem('rt_updated'); } catch (e) {} setTimeout(function () { toast(t('updatedReload')); }, 600); }
 
