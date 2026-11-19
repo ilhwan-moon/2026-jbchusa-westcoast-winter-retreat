@@ -93,20 +93,20 @@
     // 말씀 안내 (통역)
     sermonNotes: [
       L('성인 생활말씀은 대강당에서 한국어와 스페인어로 진행됩니다 (순차 통역).', 'The Adult Christian Life Seminar will be held in the Main Hall in Korean with consecutive Spanish interpretation.', 'Los sermones para adultos son en el Salón Principal, en coreano y español (interpretación consecutiva).', '基督徒生活话语（成人）西班牙语及韩语在大讲堂进行交替传译。'),
-      L('영어권과 중국어권은 대강당에서 동시 통역으로 듣습니다 (통역기).', 'English and Chinese are interpreted simultaneously in the Main Hall (interpreter device).', 'Inglés y chino: interpretación simultánea en el Salón Principal (con receptor).', '英语及中文在大讲堂通过翻译器同声传译。'),
-      L('중고등부 말씀은 별관 2층 중강당에서 따로 진행됩니다.', 'Youth Group sermons are held in the Annex (1530) 2F Medium Hall.', 'Los sermones del grupo juvenil son en 1530, 2do piso, Sala Mediana.', '初高中部话语在附楼2楼中高等学校教室同时进行。'),
-      L('언어별 성경 강연회(전도 집회)는 아래 장소에서 진행됩니다.', 'Bible Seminars are held in separate rooms for each language (see below).', 'Los seminarios bíblicos son en salas separadas por idioma (ver abajo).', '各语言圣经研讨会在下列地点进行。'),
+      L('영어권과 중국어권은 대강당에서 동시 통역으로 듣습니다 (통역기).', 'English and Chinese speakers will hear the Adult Christian Life Seminar in the Main Hall with simultaneous interpretation (interpreter device).', 'Inglés y chino: interpretación simultánea en el Salón Principal (con receptor).', '英语及中文在大讲堂通过翻译器同声传译。'),
+      L('중고등부 말씀은 별관 2층 중강당에서 따로 진행됩니다.', 'The Youth Group Christian Life Seminar will be held separately in the Annex (1530), 2F Medium Hall.', 'Los sermones del grupo juvenil son en 1530, 2do piso, Sala Mediana.', '初高中部话语在附楼2楼中高等学校教室同时进行。'),
+      L('언어별 성경 강연회(전도 집회)는 아래 장소에서 진행됩니다.', 'Bible Seminars will be held in separate rooms for each language (see below).', 'Los seminarios bíblicos son en salas separadas por idioma (ver abajo).', '各语言圣经研讨会在下列地点进行。'),
     ],
 
     // 말씀 장소 안내 (포스터 번호 ①~⑦)
     places: [
-      { n: 1, where: L('대강당', 'Main Hall', 'Salón Principal', '大礼堂'), what: L('성인 말씀', 'Adult sermon', 'Sermón para adultos', '成人话语') },
+      { n: 1, where: L('대강당', 'Main Hall', 'Salón Principal', '大礼堂'), what: L('성인 말씀', 'Adult Christian Life Seminar', 'Sermón para adultos', '成人话语') },
       { n: 2, where: L('본관 2층 중강당', 'Main (1540) 2F English Hall', '1540 2do piso, Sala Mediana', '1540 二楼 中礼堂'), what: L('영어 성경 강연회', 'English Bible Seminar', 'Seminario bíblico en inglés', '英文布道会') },
       { n: 3, where: L('본관 1층 상담실', 'Main (1540) 1F Counseling Room', '1540 1er piso, Sala Pequeña', '1540 一楼 辅导室'), what: L('한국어 성경 강연회', 'Korean Bible Seminar', 'Seminario bíblico en coreano', '韩文布道会') },
       { n: 4, where: L('본관 1층 소강당', 'Main (1540) 1F Latino Hall', '1540 1er piso, Sala Mediana', '1540 一楼 中礼堂'), what: L('스페인어 성경 강연회', 'Spanish Bible Seminar', 'Seminario bíblico en español', '西班牙语布道会') },
       { n: 5, where: L('별관 2층 집회실', 'Annex (1530) 2F Chinese Hall', '1530 2do piso, Sala Pequeña', '1530 二楼 小礼堂'), what: L('중국어 성경 강연회', 'Chinese Bible Seminar', 'Seminario bíblico en chino', '中文布道会') },
-      { n: 6, where: L('별관 2층 중강당', 'Annex (1530) 2F Medium Hall', '1530 2do piso, Sala Mediana', '1530 二楼 中礼堂'), what: L('중고등부 말씀', 'Youth Group sermon', 'Sermón para el grupo juvenil', '青少年话语') },
-      { n: 7, where: L('본관 2층 초등2실 · 1층 초등1실', 'Main (1540) 2F E2 Room · 1F E1 Room', '1540 2do piso Sala E2 · 1er piso Sala E1', '1540 二楼 E2教室 · 一楼 E1教室'), what: L('초등부 2 · 초등부 1 말씀', 'Elementary 2 · Elementary 1 sermon', 'Sermón para E2 · E1', '小学二年级 · 一年级信息') },
+      { n: 6, where: L('별관 2층 중강당', 'Annex (1530) 2F Medium Hall', '1530 2do piso, Sala Mediana', '1530 二楼 中礼堂'), what: L('중고등부 말씀', 'Youth Group Christian Life Seminar', 'Sermón para el grupo juvenil', '青少年话语') },
+      { n: 7, where: L('본관 2층 초등2실 · 1층 초등1실', 'Main (1540) 2F E2 Room · 1F E1 Room', '1540 2do piso Sala E2 · 1er piso Sala E1', '1540 二楼 E2教室 · 一楼 E1教室'), what: L('초등부 2 · 초등부 1 말씀', 'Elementary 2 · Elementary 1 classes', 'Sermón para E2 · E1', '小学二年级 · 一年级信息') },
     ],
 
     // 성경 강연회 (언어별 장소·강사)
