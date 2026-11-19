@@ -221,15 +221,14 @@ html[data-size="3"] .checks { grid-template-columns: 1fr; }
 .fees td.free { color: #2e7d4f; }
 
 /* ── 연락처 ── */
-.emergency { display: grid; gap: .1rem; padding: 1rem 1.1rem; margin-bottom: 14px; border-radius: var(--radius); background: #b3261e; color: #fff; text-decoration: none; box-shadow: var(--shadow); }
-.em-k { display: flex; align-items: center; gap: .5rem; font-weight: 800; font-size: 1.05rem; }
-.em-who { font-weight: 700; font-size: 1.1rem; }
-.em-tel { font-size: 1.8rem; font-weight: 800; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
-.em-note { font-size: .95rem; opacity: .92; }
-.callcard { display: grid; gap: .1rem; padding: 1rem 1.1rem; margin-bottom: 14px; border-radius: var(--radius); background: var(--surface); border: 2px solid var(--blue); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); }
-.cc-k { color: var(--muted); font-weight: 700; font-size: .95rem; }
+/* 전화 카드 (응급 의료 · 진행 문의): 같은 모양, 왼쪽 색 줄로만 구분 */
+.callcard { display: grid; gap: .15rem; padding: .9rem 1rem; margin-bottom: 12px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--blue); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); }
+.cc-k { display: flex; align-items: center; gap: .4rem; color: var(--blue); font-weight: 800; font-size: 1rem; white-space: nowrap; }
 .cc-who { font-weight: 800; font-size: 1.1rem; }
-.cc-tel { display: flex; align-items: center; gap: .4rem; color: var(--blue); font-size: 1.5rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.cc-tel { display: flex; align-items: center; gap: .4rem; white-space: nowrap; color: var(--blue); font-size: 1.3rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.cc-note { color: var(--muted); font-size: .95rem; }
+.cc-em { border-left-color: var(--warn); }
+.cc-em .cc-k, .cc-em .cc-tel { color: var(--warn); }
 .depts { list-style: none; margin: 0; padding: 0; }
 .depts a { display: grid; grid-template-columns: 1fr auto; gap: 0 .8rem; padding: .7rem 0; min-height: 56px; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink); }
 .depts li:first-child a { border-top: 0; }
