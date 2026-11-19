@@ -91,7 +91,7 @@ main { padding-top: 14px; }
 
 /* ── 첫 화면 ── */
 .hero { position: relative; border-radius: 22px; overflow: hidden; background: linear-gradient(180deg, #f7f2ea, #efe7da); border: 1px solid var(--line); box-shadow: var(--shadow); margin-bottom: 14px; }
-.hero-art { display: block; width: 100%; height: auto; max-height: 300px; object-fit: cover; object-position: 50% 45%; }
+.hero-art { display: block; width: 100%; height: auto; max-height: 190px; object-fit: cover; object-position: 50% 50%; }
 .hero-text { padding: 14px 18px 18px; color: #241d1a; }
 .hero-tag { margin: 0; font-size: .82rem; letter-spacing: .08em; color: #7a6e66; }
 .hero-title { margin: .15rem 0 .1rem; font-family: var(--serif); font-size: 1.6rem; line-height: 1.25; color: #8a2e22; }
