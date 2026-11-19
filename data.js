@@ -187,7 +187,7 @@
     contacts: {
       emergency: { who: L('김선 자매', 'S. Sun Kim', 'Hna. Sun Kim', 'S. Sun Kim'), tel: '(760) 318-5238',
         note: L('환자 발생 및 의약품 문의는 의무 담당자에게 즉시 연락해 주세요.', 'For medical help or medicine, call right away.', 'Para asistencia médica o medicinas, llame de inmediato.', '所有医疗紧急事故和医疗用品，请立即联系。') },
-      inquiry: { who: L('신재현d', 'D. Tito Shin', 'D. Tito Shin', 'D. Tito Shin'), tel: '(213) 446-7575',
+      inquiry: { who: L('신재현', 'D. Tito Shin', 'D. Tito Shin', 'D. Tito Shin'), tel: '(213) 446-7575',
         note: L('수련회 진행 사항 문의', 'Questions about the retreat schedule', 'Consultas sobre el horario del retiro', '培灵会进行相关咨询') },
       depts: [
         { d: L('등록접수부', 'Registration', 'Registración', '登记'), who: L('이영철, 이원준', 'Young C Lee, Won J Lee', 'Young C Lee, Won J Lee', 'Young C Lee, Won J Lee'), tel: '(213) 268-3214' },
