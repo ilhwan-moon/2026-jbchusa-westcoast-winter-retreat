@@ -170,14 +170,6 @@
       { who: L('라스베가스교회, 샌프란시스코교회', 'Las Vegas Church, San Francisco Church', 'Iglesias de Las Vegas y San Francisco', 'Las Vegas教会, San Francisco教会'), where: L('외부 청소 및 쓰레기 정리', 'Outside cleaning & trash', 'Limpieza exterior y basura', '外部清洁及垃圾整理') },
     ],
 
-    // 회비
-    fees: [
-      { who: L('성인', 'Adults', 'Adultos', '成人'), ko: '$120', other: '$80' },
-      { who: L('중고등부 (13세 이상)', 'Youth (13+, middle/high school)', 'Jóvenes (13+ años)', '中学生 (13岁以上)'), ko: '$100', other: '$60' },
-      { who: L('초등부 (6세 이상 ~ 13세 미만)', 'Elementary (6–12)', 'Primaria (6–12 años)', '小学生 (6–12岁)'), ko: '$100', other: '$60' },
-      { who: L('처음 참석자 · 미취학 · 전도대상', 'First-time attendees · preschoolers · guests', 'Primera vez · preescolares · invitados', '首次参加者 · 学龄前 · 福音对象'), free: true },
-    ],
-    feeCols: L(['한인', '라티노·중국인'], ['Korean', 'Latino · Chinese'], ['Coreanos', 'Latinos · Chinos'], ['韩人', '拉丁裔 · 华人']),
 
     supplies: [
       { id: 'bible', t: L('성경', 'Bible', 'Biblia', '圣经') },

@@ -16,7 +16,7 @@
       mainSermons: '전체 말씀 (신앙생활 말씀)', places: '말씀 장소 안내', seminar: '성경 강연회 (언어별)', seminarLead: '언어별로 아래 장소에서 따로 진행됩니다.', seminarTimes: '강연회 시간', seminarN: '{n}강',
       langFellow: '언어권별 전체 교제 · 11/28(토) 오후 2:30~4:30', counsel: '전도 · 생활 상담', counselBtn: '상담 신청하기 (QR코드)',
       lodging: '숙소 안내', rules: '수양관에서 이것만은 꼭! 지켜주세요', supplies: '준비물 체크', suppliesLead: '챙긴 것을 누르면 체크됩니다. 이 휴대폰에 기억돼요.',
-      fees: '회비', feeFree: '무료', cleanup: '3일째 후발대 청소 구역', cleanupLead: '11/29(일) 점심식사 후 다같이 정리하고 귀가합니다.',
+      cleanup: '3일째 후발대 청소 구역', cleanupLead: '11/29(일) 점심식사 후 다같이 정리하고 귀가합니다.',
       emergency: '응급 · 의료', depts: '부서 책임자', venue: '오시는 길', openMap: '지도에서 보기', callTap: '누르면 전화가 걸립니다',
       installTitle: '휴대폰 홈 화면에 추가', installSub: '앱처럼 한 번에 열 수 있어요', installed: '홈 화면에 추가되었습니다',
       share: '공유하기', qr: 'QR 코드', qrTitle: '휴대폰 카메라로 찍으면 수련회 안내가 열립니다', close: '닫기', copied: '링크를 복사했습니다', updatedReload: '새 내용으로 바뀌었습니다',
@@ -35,7 +35,7 @@
       mainSermons: 'Main Sermons (Christian Life)', places: 'Sermon Locations', seminar: 'Bible Seminars (by language)', seminarLead: 'Each language meets in its own room:', seminarTimes: 'Seminar times', seminarN: 'Session {n}',
       langFellow: 'Fellowship by Language · Sat 11/28, 2:30–4:30 PM', counsel: 'Counseling', counselBtn: 'Sign up for counseling (QR)',
       lodging: 'Accommodation', rules: 'Please Keep the Following', supplies: 'What to Bring', suppliesLead: 'Tap each item you have packed. It is saved on this phone.',
-      fees: 'Fees', feeFree: 'Free', cleanup: 'Day 3 Clean-up Areas', cleanupLead: 'After lunch on Sun 11/29, everyone cleans up together before leaving.',
+      cleanup: 'Day 3 Clean-up Areas', cleanupLead: 'After lunch on Sun 11/29, everyone cleans up together before leaving.',
       emergency: 'Emergency · Medical', depts: 'Departments', venue: 'Location', openMap: 'Open in Maps', callTap: 'Tap to call',
       installTitle: 'Add to Home Screen', installSub: 'Open it like an app, in one tap', installed: 'Added to Home Screen',
       share: 'Share', qr: 'QR code', qrTitle: 'Scan with your phone camera to open', close: 'Close', copied: 'Link copied', updatedReload: 'Updated to the latest version',
@@ -54,7 +54,7 @@
       mainSermons: 'Sermones principales (vida cristiana)', places: 'Ubicación de los sermones', seminar: 'Seminarios bíblicos (por idioma)', seminarLead: 'Cada idioma se reúne en su propia sala:', seminarTimes: 'Horario de seminarios', seminarN: 'Sesión {n}',
       langFellow: 'Reunión por idioma · Sáb 28/11, 2:30–4:30 p. m.', counsel: 'Consejería', counselBtn: 'Inscribirse en consejería (QR)',
       lodging: 'Alojamiento', rules: 'Mantenga lo siguiente', supplies: 'Qué traer', suppliesLead: 'Toque cada cosa que ya preparó. Se guarda en este teléfono.',
-      fees: 'Cuotas', feeFree: 'Gratis', cleanup: 'Limpieza del día 3', cleanupLead: 'Después del almuerzo del domingo 29/11, todos limpian juntos antes de irse.',
+      cleanup: 'Limpieza del día 3', cleanupLead: 'Después del almuerzo del domingo 29/11, todos limpian juntos antes de irse.',
       emergency: 'Emergencia · Médico', depts: 'Departamentos', venue: 'Cómo llegar', openMap: 'Abrir en el mapa', callTap: 'Toque para llamar',
       installTitle: 'Agregar a la pantalla de inicio', installSub: 'Ábralo como una app, con un toque', installed: 'Agregado a la pantalla de inicio',
       share: 'Compartir', qr: 'Código QR', qrTitle: 'Escanee con la cámara del teléfono', close: 'Cerrar', copied: 'Enlace copiado', updatedReload: 'Actualizado a la última versión',
@@ -73,7 +73,7 @@
       mainSermons: '基督徒生活话语（全体）', places: '信息与聚会地点', seminar: '圣经研讨会（按语言）', seminarLead: '各语言在以下地点分别进行：', seminarTimes: '研讨会时间', seminarN: '讲道 {n}',
       langFellow: '按语别分组交通 · 11/28(周六) 下午 2:30–4:30', counsel: '商谈', counselBtn: '报名商谈（二维码）',
       lodging: '寝室', rules: '请在培灵会期间遵守以下事项', supplies: '准备物品', suppliesLead: '点一下已准备好的物品即可打勾，会保存在这部手机上。',
-      fees: '会费', feeFree: '免费', cleanup: '第三天清洁区域', cleanupLead: '11/29(周日)午餐后，大家一起整理后离开。',
+      cleanup: '第三天清洁区域', cleanupLead: '11/29(周日)午餐后，大家一起整理后离开。',
       emergency: '紧急 · 医疗', depts: '部门', venue: '地址', openMap: '在地图中打开', callTap: '点一下即可拨打',
       installTitle: '添加到手机主屏幕', installSub: '像应用一样一点即开', installed: '已添加到主屏幕',
       share: '分享', qr: '二维码', qrTitle: '用手机相机扫描即可打开', close: '关闭', copied: '链接已复制', updatedReload: '已更新为最新内容',
@@ -347,10 +347,6 @@
     $('supplyList').innerHTML = R.supplies.map(function (s) {
       return '<li><button type="button" data-sup="' + s.id + '" aria-pressed="' + !!sp[s.id] + '"><span class="box">' + ICONS.check + '</span>' + esc(x(s.t)) + '</button></li>';
     }).join('');
-    var cols = x(R.feeCols);
-    $('feeTable').innerHTML = '<thead><tr><th></th><th>' + esc(cols[0]) + '</th><th>' + esc(cols[1]) + '</th></tr></thead><tbody>' + R.fees.map(function (f) {
-      return '<tr><th scope="row">' + esc(x(f.who)) + '</th>' + (f.free ? '<td colspan="2" class="free">' + esc(t('feeFree')) + '</td>' : '<td>' + f.ko + '</td><td>' + f.other + '</td>') + '</tr>';
-    }).join('') + '</tbody>';
     $('cleanupList').innerHTML = R.cleanup.map(function (c) { return '<li><span class="rk">' + esc(x(c.where)) + '</span><span class="rv"><b>' + esc(x(c.who)) + '</b></span></li>'; }).join('');
   }
 
