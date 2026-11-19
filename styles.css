@@ -11,7 +11,7 @@
   --blue: #34566a;
   --blue-soft: #e3eaef;
   --gold: #946a1c;
-  --rose: #f4e1d9;
+  --rose: #faede7;
   --live: #c0392b;
   --live-soft: #fdecea;
   --warn: #a8281c;
@@ -26,13 +26,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #141110; --surface: #1e1a18; --surface-2: #262120; --ink: #f2ece8; --ink-2: #d2c8c3; --muted: #a59a95; --line: #3a3230;
-    --primary: #f0907b; --primary-ink: #1a0f0c; --blue: #9cc3d8; --blue-soft: #1f2a31; --gold: #e2bb6a; --rose: #34221d;
+    --primary: #f0907b; --primary-ink: #1a0f0c; --blue: #9cc3d8; --blue-soft: #1f2a31; --gold: #e2bb6a; --rose: #2a1b17;
     --live: #ff8a7a; --live-soft: #3a1f1b; --warn: #ff9c8c; --warn-soft: #3a201c; --shadow: 0 1px 2px rgba(0,0,0,.4); color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #141110; --surface: #1e1a18; --surface-2: #262120; --ink: #f2ece8; --ink-2: #d2c8c3; --muted: #a59a95; --line: #3a3230;
-  --primary: #f0907b; --primary-ink: #1a0f0c; --blue: #9cc3d8; --blue-soft: #1f2a31; --gold: #e2bb6a; --rose: #34221d;
+  --primary: #f0907b; --primary-ink: #1a0f0c; --blue: #9cc3d8; --blue-soft: #1f2a31; --gold: #e2bb6a; --rose: #2a1b17;
   --live: #ff8a7a; --live-soft: #3a1f1b; --warn: #ff9c8c; --warn-soft: #3a201c; --shadow: 0 1px 2px rgba(0,0,0,.4); color-scheme: dark;
 }
 
@@ -149,7 +149,9 @@ main { padding-top: 14px; }
 .s-meta { font-size: .98rem; color: var(--ink-2); display: inline-flex; align-items: center; gap: .3rem; flex-wrap: wrap; }
 .s-meta.mine { color: var(--ink); font-size: 1.02rem; display: flex; align-items: flex-start; }
 .s-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; font-size: .98rem; }
-.sched .past { opacity: .72; }
+.sched .past { background: var(--surface-2); }
+.sched .past .i-time, .sched .past .i-title, .sched .past .s-title, .sched .past .s-meta, .sched .past .s-label { color: var(--muted); }
+.sched .past .i-ico { opacity: .6; }
 .sched .live { background: var(--live-soft); box-shadow: inset 5px 0 0 var(--live); opacity: 1; }
 .live-tag { display: inline-flex; align-items: center; gap: .35rem; font-weight: 800; color: var(--live); font-size: .9rem; }
 .others summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 700; color: var(--primary); font-size: .98rem; }
@@ -176,8 +178,9 @@ html[data-size="2"] .sched .i-time, html[data-size="3"] .sched .i-time { grid-co
 .rows li.mine { background: var(--rose); margin: 0 -.6rem; padding-left: .6rem; padding-right: .6rem; border-radius: 12px; }
 html[data-size="3"] .rows li { grid-template-columns: 1fr; }
 .warn { list-style: none; margin: .8rem 0 0; padding: .7rem .9rem; background: var(--warn-soft); border-radius: 12px; color: var(--warn); font-weight: 700; font-size: 1rem; }
-.warn li { margin: .2rem 0; }
-.warn li::before { content: "✱ "; }
+.warn li { margin: .45rem 0; display: grid; grid-template-columns: auto 1fr; gap: .35rem; font-weight: 600; }
+.warn li b { display: block; font-weight: 800; }
+.warn li::before { content: "✱"; }
 .sermons { list-style: none; margin: 0; padding: 0; }
 .sermons li { display: flex; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--line); }
 .sermons li:first-child { border-top: 0; }
@@ -312,3 +315,10 @@ dialog.video-dlg { width: min(960px, 96vw); max-width: 96vw; padding: 0; backgro
 .now-place { display: flex; align-items: center; gap: .3rem; color: var(--ink); font-weight: 700; margin-top: .1rem; }
 .now-time { display: flex; flex-direction: column; }
 .card { scroll-margin-top: 12px; }
+
+/* 가독성: 번호 동그라미 글자색 고정 */
+.places li .pn, .sermons .sn { color: var(--primary-ink); }
+/* 아이콘(📍)과 글이 떨어지지 않게 */
+.s-meta { flex-wrap: nowrap; align-items: flex-start; }
+.s-meta > .ico { margin-top: .2em; }
+.s-meta > span:not(.ico) { min-width: 0; }

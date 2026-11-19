@@ -158,7 +158,9 @@
   function fmt(s, o) { return String(s).replace(/\{(\w+)\}/g, function (_, k) { return o[k] == null ? '' : o[k]; }); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   // 줄바꿈 정리: 「 · 」로 나뉜 덩어리와 (괄호)는 한 덩어리로 묶어, 줄이 넘치면 덩어리째 다음 줄로 내려갑니다
-  function nb(h) { return String(h).split(' · ').map(function (p) { return '<span class="nw">' + p.replace(/ (\([^)]*\))/g, ' <span class="nw">$1</span>') + '</span>'; }).join(' · '); }
+  // 짧은 덩어리(예: 「2박 3일」)만 묶습니다. 긴 문장을 통째로 묶으면 앞의 표시(✱, 「한국어권:」) 옆에 못 붙고 아래로 떨어지기 때문
+  function short(p) { return p.replace(/<[^>]*>|&[a-z#0-9]+;/g, 'x').length <= 16; }
+  function nb(h) { return String(h).split(' · ').map(function (p) { p = p.replace(/([^\s(]+\([^)\s]{1,3}\))/g, '<span class="nw">$1</span>'); p = p.replace(/ (\([^)]*\))/g, function (m, g) { return short(g) ? ' <span class="nw">' + g + '</span>' : m; }); return short(p) ? '<span class="nw">' + p + '</span>' : p; }).join('\u00a0· '); }
   function xb(o) { return nb(esc(x(o))); }
   function tm(s, e) { return '<span class="nw">' + esc(fmtTime(s, e)) + '</span>'; }
   function ico(n) { return '<span class="ico" aria-hidden="true">' + (ICONS[n] || '') + '</span>'; }
@@ -303,13 +305,13 @@
         body = '<span class="s-label">' + esc(fmt(t('sermonN'), { n: it.n })) + '</span>' +
           '<span class="s-title">' + xb(s.title) + '</span>' +
           '<span class="s-meta"><b>' + xb(s.speaker) + '</b></span>' +
-          '<span class="s-meta">' + esc(t('praise')) + ': ' + xb(s.praise) + (s.song ? ' · ' + xb(s.song) : '') + '</span>' +
+          '<span class="s-meta"><span>' + esc(t('praise')) + ': ' + xb(s.praise) + '</span></span>' + (s.song ? '<span class="s-meta"><span>' + esc(t('song')) + ': ' + xb(s.song) + '</span></span>' : '') +
           '<span class="s-meta">' + ico('pin') + esc(t('place')) + ': ' + xb(R.places[0].where) + '</span>' +
           '<a class="s-link" href="#word-seminar">' + esc(t('seeSeminar')) + ' ›</a>';
       } else if (it.lang) {
         var mine = R.fellowship.filter(function (f) { return f.lang === state.lang; })[0];
         body = '<span class="i-title">' + xb(it.t) + '</span>' +
-          (mine ? '<span class="s-meta mine">' + ico('pin') + '<b>' + xb(mine.name) + '</b>: ' + xb(mine.where) + '</span>' : '') +
+          (mine ? '<span class="s-meta mine">' + ico('pin') + '<span><b>' + xb(mine.name) + '</b>: ' + xb(mine.where) + '</span></span>' : '') +
           '<details class="others"><summary>' + esc(t('seeAll')) + '</summary><ul>' + R.fellowship.filter(function (f) { return f !== mine; }).map(function (f) {
             return '<li><b>' + xb(f.name) + '</b>: ' + xb(f.where) + '</li>';
           }).join('') + '</ul></details>';
@@ -355,7 +357,7 @@
   function supplies() { try { return JSON.parse(store('rt_sup') || '{}') || {}; } catch (e) { return {}; } }
   function renderInfo() {
     $('lodgingList').innerHTML = R.lodging.map(function (l) { return '<li><span class="rk">' + xb(l.where) + '</span><span class="rv"><b>' + xb(l.who) + '</b></span></li>'; }).join('');
-    $('lodgingRules').innerHTML = R.lodgingRules.map(function (s) { return '<li>' + xb(s) + '</li>'; }).join('');
+    $('lodgingRules').innerHTML = R.lodgingRules.map(function (r) { return '<li><span><b class="nw">' + esc(x(r.time)) + '</b> ' + esc(x(r.text)) + '</span></li>'; }).join('');
     $('ruleList').innerHTML = R.rules.map(function (s) { return '<li>' + x(s) + '</li>'; }).join('');
     $('kidsTitle').textContent = x(R.kidsTitle);
     $('kidsList').innerHTML = R.kids.map(function (s) { return '<li>' + x(s) + '</li>'; }).join('');

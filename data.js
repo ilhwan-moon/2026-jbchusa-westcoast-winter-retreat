@@ -134,9 +134,12 @@
       { where: L('별관 2층 중고등부 강당', '1530 2F, youth sermon room', '1530 2do piso, salón pequeño', '附楼2楼 中高等部讲堂'), who: L('교회학교 형제숙소', "Church school brothers' lodge", 'Hermanos varones estudiantes', '教会学校弟兄寝室') },
       { where: L('별관 2층 그 외 숙소', '1530 2F, other rooms', '1530 2do piso, otros cuartos', '附楼2楼 其他房间'), who: L('봉사회, 청년형제 숙소', "Fathers' & YA brothers' lodge", 'Padres y hermanos varones', '侍奉会和青年会弟兄') },
     ],
+    // 밤 화장실 규칙: time(시간)은 굵게 한 덩어리로, text(내용)는 그 뒤에 이어서 표시
     lodgingRules: [
-      L('오후 11:00 ~ 오전 8:00 형제님들은 본관 남자화장실 사용금지', "11:00 PM – 8:00 AM: brothers may not use the men's bathroom in the main building (1540)", '11:00 pm – 8:00 am: los hermanos no pueden usar el baño de hombres del edificio 1540', '11:00pm – 08:00am 禁止弟兄们使用主楼洗手间'),
-      L('오후 11:00 ~ 오전 8:00 자매님들은 별관 2층 여자화장실 사용금지', "11:00 PM – 8:00 AM: sisters may not use the women's bathroom in the annex (1530)", '11:00 pm – 8:00 am: las hermanas no pueden usar el baño de mujeres del edificio 1530', '11:00pm – 08:00am 禁止姊妹们使用附楼洗手间'),
+      { time: L('오후 11:00 ~ 오전 8:00', '11:00 PM – 8:00 AM', '11:00 p. m. – 8:00 a. m.', '晚上 11:00 – 早上 8:00'),
+        text: L('형제님들은 본관 남자화장실 사용금지', "Brothers may not use the men's bathroom in the main building (1540).", 'Los hermanos no pueden usar el baño de hombres del edificio 1540.', '禁止弟兄们使用主楼洗手间') },
+      { time: L('오후 11:00 ~ 오전 8:00', '11:00 PM – 8:00 AM', '11:00 p. m. – 8:00 a. m.', '晚上 11:00 – 早上 8:00'),
+        text: L('자매님들은 별관 2층 여자화장실 사용금지', "Sisters may not use the women's bathroom in the annex (1530).", 'Las hermanas no pueden usar el baño de mujeres del edificio 1530.', '禁止姊妹们使用附楼洗手间') },
     ],
 
     // 수양관에서 이것만은 꼭!
