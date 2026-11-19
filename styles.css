@@ -391,3 +391,15 @@ html[lang^="zh"] .tcell { word-break: normal; }
 :root[data-theme="dark"] .sq-list li.soon button { background: #3a2f12; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sq-list li.soon button { background: #3a2f12; } }
 .now-soon { display: inline-block; margin-bottom: .2rem; padding: .1rem .6rem; border-radius: 999px; background: #8a5a00; color: #fff; font-size: .9rem; font-weight: 800; }
+
+/* ── 공지 띠 ── */
+.notices:empty { display: none; }
+.notices { display: grid; gap: 8px; margin: 0 0 12px; }
+.notice { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: .5rem; padding: .7rem .5rem .7rem .9rem; border-radius: 14px; font-weight: 600; line-height: 1.5; }
+.notice p { margin: 0; }
+.notice b { margin-right: .2rem; }
+.notice .ico { margin-top: .2em; }
+.notice button { width: 44px; height: 44px; margin: -.5rem -.1rem -.5rem 0; border: 0; background: transparent; color: inherit; font-size: 1.1rem; cursor: pointer; border-radius: 10px; }
+.notice.urgent { background: #a8281c; color: #fff; }
+.notice.info { background: var(--blue-soft); color: var(--ink); border: 1px solid color-mix(in srgb, var(--blue) 35%, var(--line)); }
+.notice.info b, .notice.info .ico { color: var(--blue); }

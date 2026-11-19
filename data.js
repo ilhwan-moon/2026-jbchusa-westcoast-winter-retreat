@@ -24,6 +24,15 @@
       '你们该效法我，像我效法基督一样。'),
     tagline: 'A Life, Piece by Piece, to Be Like Him',
     host: 'Jesus Baptist U.S.A. Conference',
+    // ── 공지 띠 (모든 화면 맨 위에 표시) ──
+    // id: 아무 이름(겹치지 않게), level: 'urgent'(빨강) 또는 'info'(파랑)
+    // from / until: 보여 줄 기간 (LA 시간, 24시간제). 비워 두면 항상 표시
+    // text: L('한국어', 'English', 'Español', '中文')
+    // 예) { id: 'lunch-late', level: 'urgent', from: '2026-11-28 12:00', until: '2026-11-28 14:00',
+    //       text: L('점심식사가 10분 늦게 시작됩니다.', 'Lunch starts 10 minutes late.', 'El almuerzo empieza 10 minutos tarde.', '午餐推迟10分钟开始。') },
+    notices: [
+    ],
+
     // 홍보 영상 (유튜브 영상 ID: https://youtu.be/41c0XBJCZZc 의 끝부분)
     video: { youtube: '41c0XBJCZZc' },
     dateText: L('2026년 11월 27일(금) ~ 29일(일) · 2박 3일', 'Fri,\u00a0Nov\u00a027 – Sun,\u00a0Nov\u00a029, 2026', 'Vie\u00a027 – Dom\u00a029 de noviembre de\u00a02026', '2026年11月27日(周五) – 29日(周日)'),

@@ -7,7 +7,7 @@
   var T = {
     ko: {
       counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상 보기', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
-      soonIn: '{n}분 후 시작', sermonsAt: '전체 말씀 · 대강당', nextSermon: '다음 말씀', viewDay: '날짜별 보기', viewTable: '전체 일정표', tableNote: '시간은 오후·오전 표시 없이 줄였습니다. 칸을 누르면 그날 자세한 일정으로 갑니다.',
+      noticeClose: '닫기', noticeLabel: '공지', soonIn: '{n}분 후 시작', sermonsAt: '전체 말씀 · 대강당', nextSermon: '다음 말씀', viewDay: '날짜별 보기', viewTable: '전체 일정표', tableNote: '시간은 오후·오전 표시 없이 줄였습니다. 칸을 누르면 그날 자세한 일정으로 갑니다.',
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
@@ -28,7 +28,7 @@
     },
     en: {
       counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch the promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
-      soonIn: 'Starts in {n} min', sermonsAt: 'Main Sermons · Main Hall', nextSermon: 'Next', viewDay: 'By day', viewTable: 'Full table', tableNote: 'Times are shortened (no AM/PM). Tap a cell to see that day in detail.',
+      noticeClose: 'Close', noticeLabel: 'Notice', soonIn: 'Starts in {n} min', sermonsAt: 'Main Sermons · Main Hall', nextSermon: 'Next', viewDay: 'By day', viewTable: 'Full table', tableNote: 'Times are shortened (no AM/PM). Tap a cell to see that day in detail.',
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
@@ -49,7 +49,7 @@
     },
     es: {
       counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Ver video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
-      soonIn: 'Empieza en {n} min', sermonsAt: 'Sermones · Salón Principal', nextSermon: 'Próximo', viewDay: 'Por día', viewTable: 'Tabla completa', tableNote: 'Horas abreviadas (sin a. m./p. m.). Toque una celda para ver el día en detalle.',
+      noticeClose: 'Cerrar', noticeLabel: 'Aviso', soonIn: 'Empieza en {n} min', sermonsAt: 'Sermones · Salón Principal', nextSermon: 'Próximo', viewDay: 'Por día', viewTable: 'Tabla completa', tableNote: 'Horas abreviadas (sin a. m./p. m.). Toque una celda para ver el día en detalle.',
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
@@ -70,7 +70,7 @@
     },
     zh: {
       counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 YouTube 中打开',
-      soonIn: '{n}分钟后开始', sermonsAt: '全体话语 · 大礼堂', nextSermon: '下一场', viewDay: '按日期', viewTable: '总日程表', tableNote: '时间已简写（不标上午/下午）。点一下即可查看当天详细日程。',
+      noticeClose: '关闭', noticeLabel: '公告', soonIn: '{n}分钟后开始', sermonsAt: '全体话语 · 大礼堂', nextSermon: '下一场', viewDay: '按日期', viewTable: '总日程表', tableNote: '时间已简写（不标上午/下午）。点一下即可查看当天详细日程。',
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
@@ -443,7 +443,26 @@
     $('footMeta').textContent = R.host;
   }
 
-  function render() { renderStatic(); renderSchedule(); renderWord(); renderInfo(); renderContact(); showView(false); syncUrl(); }
+  /* ── 공지 띠 ── */
+  function closedNotices() { try { return JSON.parse(store('rt_closed') || '[]') || []; } catch (e) { return []; } }
+  function renderNotices() {
+    var n = nowLA(), key = n.date + ' ' + String(Math.floor(n.min / 60)).padStart(2, '0') + ':' + String(n.min % 60).padStart(2, '0');
+    var closed = closedNotices();
+    var list = (R.notices || []).filter(function (o) {
+      return (!o.from || o.from <= key) && (!o.until || key < o.until) && closed.indexOf(o.id) === -1;
+    });
+    $('notices').innerHTML = list.map(function (o) {
+      return '<div class="notice ' + (o.level === 'urgent' ? 'urgent' : 'info') + '"><span class="ico" aria-hidden="true">' + ICONS.bell + '</span>' +
+        '<p><b>' + esc(t('noticeLabel')) + '</b> ' + xb(o.text) + '</p>' +
+        '<button type="button" data-close="' + esc(o.id) + '" aria-label="' + esc(t('noticeClose')) + '">✕</button></div>';
+    }).join('');
+  }
+  $('notices').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-close]'); if (!b) return;
+    var c = closedNotices(); c.push(b.getAttribute('data-close')); store('rt_closed', JSON.stringify(c.slice(-50))); renderNotices();
+  });
+
+  function render() { renderStatic(); renderNotices(); renderSchedule(); renderWord(); renderInfo(); renderContact(); showView(false); syncUrl(); }
 
   /* ── 화면 전환 (#schedule #word #info #contact) ── */
   function viewFromHash() {
@@ -581,6 +600,8 @@
   document.addEventListener('visibilitychange', onResume);
   window.addEventListener('pageshow', function (e) { if (e.persisted) onResume(); });
   window.addEventListener('focus', function () { if (Date.now() - lastResume > 60000) onResume(); });
+  setInterval(function () { if (!document.hidden) renderNotices(); }, 30000);   // 공지 기간 시작/끝
+  setInterval(function () { if (!document.hidden) checkForNewVersion(); }, 3 * 60000);   // 앱을 켜 둔 채여도 새 공지가 3분 안에 보이게
   setInterval(function () { if (document.hidden || state.view !== 'schedule') return; var st = status(); if (sigOf(st) !== state.sig) renderSchedule(); }, 30000);   // 1분마다 「지금」 갱신
   setTimeout(function () { readSigs().then(function (s) { fileSigs = s; }); }, 1500);
   if (store('rt_updated')) { try { localStorage.removeItem('rt_updated'); } catch (e) {} setTimeout(function () { toast(t('updatedReload')); }, 600); }
