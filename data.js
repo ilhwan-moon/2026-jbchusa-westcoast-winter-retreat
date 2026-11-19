@@ -92,7 +92,7 @@
 
     // 말씀 안내 (통역)
     sermonNotes: [
-      L('성인 생활말씀은 대강당에서 한국어와 스페인어로 진행됩니다 (순차 통역).', 'Korean and Spanish are interpreted side-by-side in the Main Hall.', 'Los sermones para adultos son en el Salón Principal, en coreano y español (interpretación consecutiva).', '基督徒生活话语（成人）西班牙语及韩语在大讲堂进行交替传译。'),
+      L('성인 생활말씀은 대강당에서 한국어와 스페인어로 진행됩니다 (순차 통역).', 'The Adult Christian Life Seminar will be held in the Main Hall in Korean with consecutive Spanish interpretation.', 'Los sermones para adultos son en el Salón Principal, en coreano y español (interpretación consecutiva).', '基督徒生活话语（成人）西班牙语及韩语在大讲堂进行交替传译。'),
       L('영어권과 중국어권은 대강당에서 동시 통역으로 듣습니다 (통역기).', 'English and Chinese are interpreted simultaneously in the Main Hall (interpreter device).', 'Inglés y chino: interpretación simultánea en el Salón Principal (con receptor).', '英语及中文在大讲堂通过翻译器同声传译。'),
       L('중고등부 말씀은 별관 2층 중강당에서 따로 진행됩니다.', 'Youth Group sermons are held in the Annex (1530) 2F Medium Hall.', 'Los sermones del grupo juvenil son en 1530, 2do piso, Sala Mediana.', '初高中部话语在附楼2楼中高等学校教室同时进行。'),
       L('언어별 성경 강연회(전도 집회)는 아래 장소에서 진행됩니다.', 'Bible Seminars are held in separate rooms for each language (see below).', 'Los seminarios bíblicos son en salas separadas por idioma (ver abajo).', '各语言圣经研讨会在下列地点进行。'),
