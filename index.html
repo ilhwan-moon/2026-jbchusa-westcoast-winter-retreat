@@ -46,8 +46,9 @@
         </div>
       </div>
       <button type="button" class="set-btn" id="setBtn" aria-haspopup="dialog">
-        <span class="flag" id="setFlag" aria-hidden="true"></span>
-        <span class="set-txt" id="setTxt"></span>
+        <span class="set-flag" id="setFlag" aria-hidden="true"></span>
+        <span class="set-g" id="setG" aria-hidden="true">가</span>
+        <span class="set-chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
     </div>
   </header>
@@ -237,26 +238,27 @@
 
   <!-- 설정: 언어 · 글씨 크기 · 화면 -->
   <dialog id="setDialog" class="set-dlg" aria-labelledby="setTitle">
+    <div class="sheet-grip" aria-hidden="true"></div>
     <div class="set-head">
       <b id="setTitle" data-i18n="settings"></b>
-      <button type="button" class="set-close" id="setClose" data-i18n-aria="close">✕</button>
+      <button type="button" class="set-close" id="setClose">✕</button>
     </div>
     <div class="set-body">
-      <h3 class="set-h"><span>🌐</span> <span data-i18n="language"></span></h3>
+      <h3 class="set-h"><span data-i18n="language"></span></h3>
       <div class="set-langs" role="group" id="langSeg">
-        <button type="button" data-lang="ko" lang="ko"><span class="flag">🇰🇷</span><span>한국어</span><span class="chk">✓</span></button>
-        <button type="button" data-lang="en" lang="en"><span class="flag">🇺🇸</span><span>English</span><span class="chk">✓</span></button>
-        <button type="button" data-lang="es" lang="es"><span class="flag">🇪🇸</span><span>Español</span><span class="chk">✓</span></button>
-        <button type="button" data-lang="zh" lang="zh-Hans"><span class="flag">🇨🇳</span><span>中文</span><span class="chk">✓</span></button>
+        <button type="button" data-lang="ko" lang="ko"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><g transform="translate(15 10) rotate(33.7)"><path d="M-5 0a5 5 0 0 1 10 0z" fill="#cd2e3a"/><path d="M-5 0a5 5 0 0 0 10 0z" fill="#0047a0"/><circle cx="-2.5" r="2.5" fill="#cd2e3a"/><circle cx="2.5" r="2.5" fill="#0047a0"/></g><g fill="#111"><g transform="translate(6.3 4.3) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g><g transform="translate(23.7 15.7) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(23.7 4.3) rotate(56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(6.3 15.7) rotate(56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g></g></svg><span>한국어</span></button>
+        <button type="button" data-lang="en" lang="en"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="0.00" width="30" height="1.54" fill="#b22234"/><rect y="3.08" width="30" height="1.54" fill="#b22234"/><rect y="6.15" width="30" height="1.54" fill="#b22234"/><rect y="9.23" width="30" height="1.54" fill="#b22234"/><rect y="12.31" width="30" height="1.54" fill="#b22234"/><rect y="15.38" width="30" height="1.54" fill="#b22234"/><rect y="18.46" width="30" height="1.54" fill="#b22234"/><rect width="13" height="10.77" fill="#3c3b6e"/><circle cx="1.6" cy="1.4" r=".45" fill="#fff"/><circle cx="4.0" cy="1.4" r=".45" fill="#fff"/><circle cx="6.4" cy="1.4" r=".45" fill="#fff"/><circle cx="8.8" cy="1.4" r=".45" fill="#fff"/><circle cx="11.2" cy="1.4" r=".45" fill="#fff"/><circle cx="2.8" cy="3.4" r=".45" fill="#fff"/><circle cx="5.2" cy="3.4" r=".45" fill="#fff"/><circle cx="7.6" cy="3.4" r=".45" fill="#fff"/><circle cx="10.0" cy="3.4" r=".45" fill="#fff"/><circle cx="1.6" cy="5.4" r=".45" fill="#fff"/><circle cx="4.0" cy="5.4" r=".45" fill="#fff"/><circle cx="6.4" cy="5.4" r=".45" fill="#fff"/><circle cx="8.8" cy="5.4" r=".45" fill="#fff"/><circle cx="11.2" cy="5.4" r=".45" fill="#fff"/><circle cx="2.8" cy="7.4" r=".45" fill="#fff"/><circle cx="5.2" cy="7.4" r=".45" fill="#fff"/><circle cx="7.6" cy="7.4" r=".45" fill="#fff"/><circle cx="10.0" cy="7.4" r=".45" fill="#fff"/><circle cx="1.6" cy="9.4" r=".45" fill="#fff"/><circle cx="4.0" cy="9.4" r=".45" fill="#fff"/><circle cx="6.4" cy="9.4" r=".45" fill="#fff"/><circle cx="8.8" cy="9.4" r=".45" fill="#fff"/><circle cx="11.2" cy="9.4" r=".45" fill="#fff"/></svg><span>English</span></button>
+        <button type="button" data-lang="es" lang="es"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ce1126"/><circle cx="15" cy="10" r="2.7" fill="#8c5a2b"/><path d="M12.6 11.4q2.4 2.2 4.8 0" fill="none" stroke="#2e7d32" stroke-width=".7"/></svg><span>Español</span></button>
+        <button type="button" data-lang="zh" lang="zh-Hans"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#de2910"/><polygon fill="#ffde00" points="5.00,2.00 5.67,4.08 7.85,4.07 6.08,5.35 6.76,7.43 5.00,6.14 3.24,7.43 3.92,5.35 2.15,4.07 4.33,4.08"/><polygon fill="#ffde00" points="10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35 9.14,2.52 9.62,1.97 9.25,1.34 9.91,1.63"/><polygon fill="#ffde00" points="12.72,3.31 12.38,3.95 12.88,4.47 12.17,4.34 11.83,4.98 11.73,4.26 11.01,4.14 11.66,3.82 11.56,3.10 12.07,3.63"/><polygon fill="#ffde00" points="12.94,6.66 12.37,7.10 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13 11.04,6.72 11.77,6.70 11.97,6.00 12.21,6.68"/><polygon fill="#ffde00" points="10.36,8.07 10.32,8.79 11.00,9.05 10.30,9.24 10.26,9.97 9.86,9.35 9.16,9.54 9.62,8.98 9.22,8.37 9.90,8.63"/></svg><span>中文</span></button>
       </div>
-      <h3 class="set-h"><span>🔠</span> <span data-i18n="textSize"></span></h3>
+      <h3 class="set-h"><span data-i18n="textSize"></span></h3>
       <div class="set-sizes" role="group" id="sizeSeg">
         <button type="button" data-size="1"><span class="g g1" aria-hidden="true">가</span><small></small></button>
         <button type="button" data-size="2"><span class="g g2" aria-hidden="true">가</span><small></small></button>
         <button type="button" data-size="3"><span class="g g3" aria-hidden="true">가</span><small></small></button>
       </div>
       <p class="set-preview" id="sizePreview"></p>
-      <h3 class="set-h"><span>🌗</span> <span data-i18n="screenMode"></span></h3>
+      <h3 class="set-h"><span data-i18n="screenMode"></span></h3>
       <div class="set-themes" role="group" id="themeSeg">
         <button type="button" data-theme="light"><span class="ico" data-ico="sun"></span><small></small></button>
         <button type="button" data-theme="dark"><span class="ico" data-ico="moon"></span><small></small></button>

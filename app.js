@@ -127,7 +127,6 @@
     clip: '<svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6"/></svg>',
     rest: '<svg viewBox="0 0 24 24"><path d="M4 11h13a3 3 0 0 1 0 6h-1M4 11v4a6 6 0 0 0 6 6h0a6 6 0 0 0 6-6v-4"/><path d="M8 3v3M12 3v3"/></svg>',
   };
-  var FLAG = { ko: '🇰🇷', en: '🇺🇸', es: '🇪🇸', zh: '🇨🇳' };
   var KIND_ICON = { meal: 'meal', sermon: 'bible', fellow: 'people', praise: 'music', rest: 'rest', sleep: 'moonS', wash: 'drop', reg: 'clip', supper: 'cup', leave: 'car' };
   var VIEWS = [['schedule', 'calendar'], ['word', 'bible'], ['info', 'info'], ['contact', 'phone']];
 
@@ -236,7 +235,7 @@
     document.querySelectorAll('[data-ico]').forEach(function (el) { el.innerHTML = ICONS[el.getAttribute('data-ico')] || ''; el.setAttribute('aria-hidden', 'true'); });
     document.querySelectorAll('#langSeg button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === L)); });
     $('sizeSeg').setAttribute('aria-label', T[L].textSize);
-    $('setFlag').textContent = FLAG[L]; $('setTxt').textContent = T[L].setBtn;
+    var fb = document.querySelector('#langSeg [data-lang="' + L + '"] svg'); $('setFlag').innerHTML = fb ? fb.outerHTML : ''; $('setG').textContent = L === 'ko' ? '가' : L === 'zh' ? '字' : 'A';
     $('setBtn').setAttribute('aria-label', T[L].settings + ' (' + T[L].language + ', ' + T[L].textSize + ')');
     $('setClose').setAttribute('aria-label', T[L].close);
     $('sizePreview').textContent = x(R.themeVerse);
