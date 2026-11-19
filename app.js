@@ -8,7 +8,7 @@
     ko: {
       counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상 보기', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
       noticeClose: '닫기', noticeLabel: '공지', soonIn: '{n}분 후 시작', sermonsAt: '전체 말씀 · 대강당', nextSermon: '다음 말씀', viewDay: '날짜별 보기', viewTable: '전체 일정표', tableNote: '시간은 오후·오전 표시 없이 줄였습니다. 칸을 누르면 그날 자세한 일정으로 갑니다.',
-      sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
+      sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 국기 버튼을 눌러 글씨 크기를 바꾸세요', settings: '설정', language: '언어', screenMode: '화면', done: '완료', setBtn: '설정', themeOpt: { light: '밝게', dark: '어둡게', auto: '자동' },
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
       now: '지금', next: '다음 순서', nowDone: '오늘 일정이 모두 끝났습니다. 편히 쉬세요.', today: '오늘',
@@ -29,7 +29,7 @@
     en: {
       counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch the promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
       noticeClose: 'Close', noticeLabel: 'Notice', soonIn: 'Starts in {n} min', sermonsAt: 'Christian Life Seminars · Main Hall', nextSermon: 'Next', viewDay: 'By day', viewTable: 'Full table', tableNote: 'Times are shortened (no AM/PM). Tap a cell to see that day in detail.',
-      sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
+      sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap the flag button at the top right to change the size.', settings: 'Settings', language: 'Language', screenMode: 'Display', done: 'Done', setBtn: 'Settings', themeOpt: { light: 'Light', dark: 'Dark', auto: 'Auto' },
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
       now: 'Now', next: 'Next', nowDone: "Today's program is over. Have a good rest.", today: 'Today',
@@ -50,7 +50,7 @@
     es: {
       counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Ver video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
       noticeClose: 'Cerrar', noticeLabel: 'Aviso', soonIn: 'Empieza en {n} min', sermonsAt: 'Sermones · Salón Principal', nextSermon: 'Próximo', viewDay: 'Por día', viewTable: 'Tabla completa', tableNote: 'Horas abreviadas (sin a. m./p. m.). Toque una celda para ver el día en detalle.',
-      sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
+      sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque la bandera arriba a la derecha para cambiar el tamaño.', settings: 'Ajustes', language: 'Idioma', screenMode: 'Pantalla', done: 'Listo', setBtn: 'Ajustes', themeOpt: { light: 'Claro', dark: 'Oscuro', auto: 'Auto' },
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
       now: 'Ahora', next: 'Siguiente', nowDone: 'El programa de hoy terminó. Que descanse.', today: 'Hoy',
@@ -71,7 +71,7 @@
     zh: {
       counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 YouTube 中打开',
       noticeClose: '关闭', noticeLabel: '公告', soonIn: '{n}分钟后开始', sermonsAt: '全体话语 · 大礼堂', nextSermon: '下一场', viewDay: '按日期', viewTable: '总日程表', tableNote: '时间已简写（不标上午/下午）。点一下即可查看当天详细日程。',
-      sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
+      sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角的国旗按钮更改字体大小。', settings: '设置', language: '语言', screenMode: '画面', done: '完成', setBtn: '设置', themeOpt: { light: '明亮', dark: '深色', auto: '自动' },
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
       now: '现在', next: '下一项', nowDone: '今天的日程已全部结束，请好好休息。', today: '今天',
@@ -127,6 +127,7 @@
     clip: '<svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6"/></svg>',
     rest: '<svg viewBox="0 0 24 24"><path d="M4 11h13a3 3 0 0 1 0 6h-1M4 11v4a6 6 0 0 0 6 6h0a6 6 0 0 0 6-6v-4"/><path d="M8 3v3M12 3v3"/></svg>',
   };
+  var FLAG = { ko: '🇰🇷', en: '🇺🇸', es: '🇪🇸', zh: '🇨🇳' };
   var KIND_ICON = { meal: 'meal', sermon: 'bible', fellow: 'people', praise: 'music', rest: 'rest', sleep: 'moonS', wash: 'drop', reg: 'clip', supper: 'cup', leave: 'car' };
   var VIEWS = [['schedule', 'calendar'], ['word', 'bible'], ['info', 'info'], ['contact', 'phone']];
 
@@ -215,9 +216,7 @@
     if (m === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', m);
     var dark = m === 'dark' || (m === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
     var meta = document.querySelector('meta[name="theme-color"]'); if (meta) meta.setAttribute('content', dark ? '#1c1716' : '#7a2e22');
-    $('themeIco').innerHTML = ICONS[m === 'light' ? 'sun' : m === 'dark' ? 'moon' : 'auto'];
-    $('themeLabel').textContent = T[state.lang].themeN[m];
-    $('themeBtn').title = T[state.lang].themeN[m]; $('themeBtn').setAttribute('aria-label', T[state.lang].themeN[m]);
+    document.querySelectorAll('#themeSeg button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-theme') === m)); b.querySelector('small').textContent = T[state.lang].themeOpt[b.getAttribute('data-theme')]; });
   }
 
   /* ── 공통 글자 ── */
@@ -236,11 +235,15 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) { el.innerHTML = nb(esc(t(el.getAttribute('data-i18n')))); });
     document.querySelectorAll('[data-ico]').forEach(function (el) { el.innerHTML = ICONS[el.getAttribute('data-ico')] || ''; el.setAttribute('aria-hidden', 'true'); });
     document.querySelectorAll('#langSeg button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === L)); });
-    $('sizeSeg').setAttribute('aria-label', T[L].textSize); $('sizeSeg').title = T[L].textSize;
+    $('sizeSeg').setAttribute('aria-label', T[L].textSize);
+    $('setFlag').textContent = FLAG[L]; $('setTxt').textContent = T[L].setBtn;
+    $('setBtn').setAttribute('aria-label', T[L].settings + ' (' + T[L].language + ', ' + T[L].textSize + ')');
+    $('setClose').setAttribute('aria-label', T[L].close);
+    $('sizePreview').textContent = x(R.themeVerse);
     document.querySelectorAll('#sizeSeg button').forEach(function (bt) {
       var n = Number(bt.getAttribute('data-size'));
       bt.setAttribute('aria-pressed', String(n === state.size));
-      bt.setAttribute('aria-label', T[L].textSizeN[n - 1]);
+      bt.setAttribute('aria-label', T[L].textSizeN[n - 1]); bt.querySelector('small').textContent = T[L].textSizeN[n - 1];
       bt.querySelector('.g').textContent = L === 'ko' ? '가' : L === 'zh' ? '字' : 'A';
     });
     $('sizeHintText').textContent = T[L].sizeHint;
@@ -522,7 +525,7 @@
     bt.addEventListener('click', function () {
       state.size = Number(bt.getAttribute('data-size')); store('rt_size', String(state.size));
       store('rt_hint', '1'); $('sizeHint').hidden = true;
-      renderStatic(); toast(T[state.lang].textSizeN[state.size - 1]);
+      renderStatic();
     });
   });
   if (!store('rt_hint') && state.size === 1) {
@@ -531,11 +534,15 @@
     setTimeout(function () { $('sizeHint').hidden = true; }, 12000);
   }
   $('sizeHintClose').addEventListener('click', function () { $('sizeHint').hidden = true; store('rt_hint', '1'); });
-  $('themeBtn').addEventListener('click', function () {
-    var next = { light: 'dark', dark: 'auto', auto: 'light' }[themeMode()];
-    store('rt_theme', next); try { document.cookie = 'rt_theme=' + next + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {}
-    applyTheme(next); toast(T[state.lang].themeN[next]);
+  $('themeSeg').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-theme]'); if (!b) return; var next = b.getAttribute('data-theme');
+    store('rt_theme', next); try { document.cookie = 'rt_theme=' + next + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e2) {}
+    applyTheme(next);
   });
+  // 설정 화면 (오른쪽 위 국기 버튼)
+  $('setBtn').addEventListener('click', function () { store('rt_hint', '1'); $('sizeHint').hidden = true; $('setDialog').showModal(); });
+  ['setClose', 'setDone'].forEach(function (id) { $(id).addEventListener('click', function () { $('setDialog').close(); }); });
+  $('setDialog').addEventListener('click', function (e) { if (e.target === $('setDialog')) $('setDialog').close(); });
   if (window.matchMedia) { var mq = matchMedia('(prefers-color-scheme: dark)'); if (mq.addEventListener) mq.addEventListener('change', function () { applyTheme(themeMode()); }); }
   function goDay(di) {
     state.day = di; state.dayPicked = true; state.mode = 'day'; renderSchedule();

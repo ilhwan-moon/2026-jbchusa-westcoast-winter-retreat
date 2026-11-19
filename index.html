@@ -45,20 +45,10 @@
           <div class="brand-sub" id="brandSub"></div>
         </div>
       </div>
-      <div class="controls">
-        <div class="seg" role="group" aria-label="Language" id="langSeg">
-          <button type="button" data-lang="ko" lang="ko">한국어</button>
-          <button type="button" data-lang="en" lang="en">EN</button>
-          <button type="button" data-lang="es" lang="es">ES</button>
-          <button type="button" data-lang="zh" lang="zh">中文</button>
-        </div>
-        <div class="sizeseg" role="group" id="sizeSeg">
-          <button type="button" data-size="1"><span class="g g1" aria-hidden="true">가</span></button>
-          <button type="button" data-size="2"><span class="g g2" aria-hidden="true">가</span></button>
-          <button type="button" data-size="3"><span class="g g3" aria-hidden="true">가</span></button>
-        </div>
-        <button type="button" class="theme-btn" id="themeBtn"><span class="ico" id="themeIco" aria-hidden="true"></span><span class="sr" id="themeLabel"></span></button>
-      </div>
+      <button type="button" class="set-btn" id="setBtn" aria-haspopup="dialog">
+        <span class="flag" id="setFlag" aria-hidden="true"></span>
+        <span class="set-txt" id="setTxt"></span>
+      </button>
     </div>
   </header>
 
@@ -243,6 +233,37 @@
     </div>
     <div class="vd-frame"><iframe id="videoFrame" title="Promo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
     <p class="vd-foot"><a id="videoOpen" target="_blank" rel="noopener"><span data-i18n="videoOpen"></span> ›</a></p>
+  </dialog>
+
+  <!-- 설정: 언어 · 글씨 크기 · 화면 -->
+  <dialog id="setDialog" class="set-dlg" aria-labelledby="setTitle">
+    <div class="set-head">
+      <b id="setTitle" data-i18n="settings"></b>
+      <button type="button" class="set-close" id="setClose" data-i18n-aria="close">✕</button>
+    </div>
+    <div class="set-body">
+      <h3 class="set-h"><span>🌐</span> <span data-i18n="language"></span></h3>
+      <div class="set-langs" role="group" id="langSeg">
+        <button type="button" data-lang="ko" lang="ko"><span class="flag">🇰🇷</span><span>한국어</span><span class="chk">✓</span></button>
+        <button type="button" data-lang="en" lang="en"><span class="flag">🇺🇸</span><span>English</span><span class="chk">✓</span></button>
+        <button type="button" data-lang="es" lang="es"><span class="flag">🇪🇸</span><span>Español</span><span class="chk">✓</span></button>
+        <button type="button" data-lang="zh" lang="zh-Hans"><span class="flag">🇨🇳</span><span>中文</span><span class="chk">✓</span></button>
+      </div>
+      <h3 class="set-h"><span>🔠</span> <span data-i18n="textSize"></span></h3>
+      <div class="set-sizes" role="group" id="sizeSeg">
+        <button type="button" data-size="1"><span class="g g1" aria-hidden="true">가</span><small></small></button>
+        <button type="button" data-size="2"><span class="g g2" aria-hidden="true">가</span><small></small></button>
+        <button type="button" data-size="3"><span class="g g3" aria-hidden="true">가</span><small></small></button>
+      </div>
+      <p class="set-preview" id="sizePreview"></p>
+      <h3 class="set-h"><span>🌗</span> <span data-i18n="screenMode"></span></h3>
+      <div class="set-themes" role="group" id="themeSeg">
+        <button type="button" data-theme="light"><span class="ico" data-ico="sun"></span><small></small></button>
+        <button type="button" data-theme="dark"><span class="ico" data-ico="moon"></span><small></small></button>
+        <button type="button" data-theme="auto"><span class="ico" data-ico="auto"></span><small></small></button>
+      </div>
+      <button type="button" class="btn primary set-done" id="setDone" data-i18n="done"></button>
+    </div>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
