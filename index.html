@@ -70,6 +70,8 @@
   <main id="main" class="wrap">
     <!-- ① 일정 -->
     <section class="view" id="v-schedule" data-view="schedule">
+      <div class="now card" id="nowCard" hidden></div>
+
       <div class="quick">
         <a class="quick-btn q-counsel" id="qCounsel" target="_blank" rel="noopener">
           <span class="ico" data-ico="chat"></span>
@@ -80,7 +82,7 @@
           <span class="q-txt"><b data-i18n="videoBtn"></b><small data-i18n="videoSub"></small></span>
         </button>
       </div>
-      <div class="hero">
+      <div class="hero" id="hero">
         <img class="hero-art" src="hero.jpg" alt="" width="900" height="833">
         <div class="hero-text">
           <p class="hero-tag">A Life, Piece by Piece, to Be Like Him</p>
@@ -92,8 +94,6 @@
         </div>
       </div>
 
-
-      <div class="now card" id="nowCard" hidden></div>
 
       <div class="daytabs" role="tablist" id="dayTabs"></div>
       <h2 class="day-label" id="dayLabel"></h2>
@@ -228,7 +228,7 @@
       <b data-i18n="videoTitle"></b>
       <button type="button" class="btn" id="videoClose" data-i18n="close"></button>
     </div>
-    <div class="vd-frame"><iframe id="videoFrame" title="Promo video" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+    <div class="vd-frame"><iframe id="videoFrame" title="Promo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
     <p class="vd-foot"><a id="videoOpen" target="_blank" rel="noopener"><span data-i18n="videoOpen"></span> ›</a></p>
   </dialog>
 

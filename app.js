@@ -6,7 +6,7 @@
 
   var T = {
     ko: {
-      counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '구글 드라이브에서 열기',
+      counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
@@ -26,7 +26,7 @@
       inappTitle: '먼저 사파리/크롬으로 열어 주세요', inappSteps: ['오른쪽 위(또는 아래) <b>메뉴</b>를 누르세요', '<b>「다른 브라우저로 열기」</b> 또는 <b>「Safari로 열기」</b>를 누르세요', '열린 화면에서 이 버튼을 다시 누르세요'],
     },
     en: {
-      counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in Google Drive',
+      counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
@@ -46,7 +46,7 @@
       inappTitle: 'Please open in Safari/Chrome first', inappSteps: ['Tap the <b>menu</b> at the top (or bottom) right', 'Tap <b>“Open in browser”</b> or <b>“Open in Safari”</b>', 'Then tap this button again'],
     },
     es: {
-      counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en Google Drive',
+      counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
@@ -66,7 +66,7 @@
       inappTitle: 'Primero ábralo en Safari/Chrome', inappSteps: ['Toque el <b>menú</b> arriba (o abajo) a la derecha', 'Toque <b>«Abrir en el navegador»</b> o <b>«Abrir en Safari»</b>', 'Luego toque este botón otra vez'],
     },
     zh: {
-      counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 Google Drive 中打开',
+      counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 YouTube 中打开',
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
@@ -150,7 +150,7 @@
     return LANGS.indexOf(n) !== -1 ? n : 'ko';
   }
 
-  var state = { lang: pickLang(), size: Number(store('rt_size') || 1), view: 'schedule', day: null };
+  var state = { lang: pickLang(), size: Number(store('rt_size') || 1), view: 'schedule', day: null, dayPicked: false, sig: '' };
   if ([1, 2, 3].indexOf(state.size) === -1) state.size = 1;
 
   function t(k) { var v = T[state.lang][k]; return v == null ? T.ko[k] : v; }
@@ -233,7 +233,8 @@
 
   /* ── 일정 ── */
   function itemInfo(it) {
-    if (it.k === 'sermon') { var s = R.sermons[it.n]; return { title: x(s.title), label: fmt(t('sermonN'), { n: it.n }) }; }
+    if (it.k === 'sermon') { var s = R.sermons[it.n]; return { title: x(s.title), label: fmt(t('sermonN'), { n: it.n }), place: xb(R.places[0].where) }; }
+    if (it.lang) { var mine = R.fellowship.filter(function (f) { return f.lang === state.lang; })[0]; return { title: x(it.t), place: mine ? xb(mine.where) : '' }; }
     return { title: x(it.t) };
   }
   function status() {
@@ -254,14 +255,18 @@
 
   function renderSchedule() {
     var st = status();
-    if (state.day == null) state.day = st.phase === 'during' ? st.day : st.phase === 'after' ? 2 : 0;
+    // 날짜 탭: 직접 고르지 않았으면 항상 「오늘」을 따라감 (자정이 지나도 자동으로 다음 날)
+    if (!state.dayPicked) state.day = st.phase === 'during' ? st.day : st.phase === 'after' ? 2 : 0;
+    state.sig = st.phase + st.day + '/' + st.cur + '/' + st.next;
+    // 수련회 기간에는 큰 그림을 줄여 「지금 / 다음」이 첫 화면에 보이게
+    $('hero').classList.toggle('compact', st.phase === 'during');
     $('heroTitle').textContent = x(R.title);
     $('heroTheme').innerHTML = (state.lang === 'en' ? '' : xb(R.theme) + ' · ') + xb(R.themeRef);   // 영어는 위 필기체와 같은 말이라 생략
     $('heroDate').innerHTML = xb(R.dateText);
     $('heroPlace').innerHTML = ico('pin') + '<span>' + xb(R.venue.name) + '</span>';
     var c = $('heroCount'); c.hidden = false;
     if (st.phase === 'before') c.textContent = st.days > 1 ? fmt(t('countBefore'), { n: st.days }) : st.days === 1 ? t('countTomorrow') : t('countToday');
-    else if (st.phase === 'during') c.textContent = fmt(t('during'), { n: st.day + 1 });
+    else if (st.phase === 'during') c.textContent = st.day === 0 && st.cur === -1 && st.next === 0 ? t('countToday') : fmt(t('during'), { n: st.day + 1 });
     else c.textContent = t('after');
 
     // 지금 / 다음
@@ -270,11 +275,13 @@
       var items = R.days[st.day].items, h = '';
       if (st.cur !== -1) {
         var a = items[st.cur], ai = itemInfo(a);
-        h += '<div class="now-row now-cur"><span class="now-k"><span class="dot"></span>' + esc(t('now')) + '</span><span class="now-t">' + (ai.label ? '<small>' + esc(ai.label) + '</small>' : '') + esc(ai.title) + '</span><span class="now-time">' + tm(a.s, a.e) + '</span></div>';
+        h += '<div class="now-row now-cur"><span class="now-k"><span class="dot"></span>' + esc(t('now')) + '</span><span class="now-t">' + (ai.label ? '<small>' + esc(ai.label) + '</small>' : '') + esc(ai.title) + '</span><span class="now-time">' + tm(a.s, a.e) + (ai.place ? '<span class="now-place">' + ico('pin') + ai.place + '</span>' : '') + '</span></div>';
       }
-      if (st.next !== -1) {
-        var b = items[st.next], bi = itemInfo(b);
-        h += '<div class="now-row"><span class="now-k">' + esc(t('next')) + '</span><span class="now-t">' + (bi.label ? '<small>' + esc(bi.label) + '</small>' : '') + esc(bi.title) + '</span><span class="now-time">' + tm(b.s, b.e) + '</span></div>';
+      var b = st.next !== -1 ? items[st.next] : null, bDay = '';
+      if (!b && R.days[st.day + 1]) { b = R.days[st.day + 1].items[0]; bDay = x(R.days[st.day + 1].tab) + ' '; }   // 오늘 끝났으면 내일 첫 일정
+      if (b) {
+        var bi = itemInfo(b);
+        h += '<div class="now-row"><span class="now-k">' + esc(t('next')) + '</span><span class="now-t">' + (bi.label ? '<small>' + esc(bi.label) + '</small>' : '') + esc(bi.title) + '</span><span class="now-time"><span class="nw">' + esc(bDay) + '</span>' + tm(b.s, b.e) + (bi.place ? '<span class="now-place">' + ico('pin') + bi.place + '</span>' : '') + '</span></div>';
       }
       if (!h) h = '<p class="now-done">' + esc(t('nowDone')) + '</p>';
       nc.innerHTML = h; nc.hidden = false;
@@ -395,6 +402,10 @@
     }
   }
   window.addEventListener('hashchange', function () { showView(true); syncUrl(); });
+  $('bottomnav').addEventListener('click', function (e) {
+    var a = e.target.closest('a[data-view]');
+    if (a && a.getAttribute('data-view') === state.view && location.hash.split('-')[0] === '#' + state.view) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  });
 
   /* ── 주소에 언어 남기기 ── */
   function syncUrl() {
@@ -447,7 +458,7 @@
     applyTheme(next); toast(T[state.lang].themeN[next]);
   });
   if (window.matchMedia) { var mq = matchMedia('(prefers-color-scheme: dark)'); if (mq.addEventListener) mq.addEventListener('change', function () { applyTheme(themeMode()); }); }
-  $('dayTabs').addEventListener('click', function (e) { var b = e.target.closest('button[data-day]'); if (b) { state.day = Number(b.getAttribute('data-day')); renderSchedule(); } });
+  $('dayTabs').addEventListener('click', function (e) { var b = e.target.closest('button[data-day]'); if (b) { state.day = Number(b.getAttribute('data-day')); state.dayPicked = true; renderSchedule(); } });
   $('supplyList').addEventListener('click', function (e) {
     var b = e.target.closest('button[data-sup]'); if (!b) return;
     var sp = supplies(), id = b.getAttribute('data-sup'); sp[id] = !sp[id]; store('rt_sup', JSON.stringify(sp));
@@ -468,8 +479,8 @@
   });
   // 홍보 영상: 누를 때만 불러옵니다 (데이터 절약)
   $('qVideo').addEventListener('click', function () {
-    $('videoFrame').src = 'https://drive.google.com/file/d/' + R.video.drive + '/preview';
-    $('videoOpen').href = 'https://drive.google.com/file/d/' + R.video.drive + '/view';
+    $('videoFrame').src = 'https://www.youtube-nocookie.com/embed/' + R.video.youtube + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+    $('videoOpen').href = 'https://youtu.be/' + R.video.youtube;
     $('videoDialog').showModal();
   });
   $('videoClose').addEventListener('click', function () { $('videoDialog').close(); });
@@ -497,13 +508,14 @@
   }
   function onResume() {
     if (document.hidden) return;
+    if (Date.now() - lastResume > 30 * 60000) state.dayPicked = false;   // 오래 있다가 돌아오면 다시 「오늘」로
     lastResume = Date.now();
     checkForNewVersion().then(function (reloaded) { if (!reloaded) renderSchedule(); });
   }
   document.addEventListener('visibilitychange', onResume);
   window.addEventListener('pageshow', function (e) { if (e.persisted) onResume(); });
   window.addEventListener('focus', function () { if (Date.now() - lastResume > 60000) onResume(); });
-  setInterval(function () { if (!document.hidden && state.view === 'schedule') renderSchedule(); }, 60000);   // 1분마다 「지금」 갱신
+  setInterval(function () { if (document.hidden || state.view !== 'schedule') return; var st = status(); if (st.phase + st.day + '/' + st.cur + '/' + st.next !== state.sig) renderSchedule(); }, 60000);   // 1분마다 「지금」 갱신
   setTimeout(function () { readSigs().then(function (s) { fileSigs = s; }); }, 1500);
   if (store('rt_updated')) { try { localStorage.removeItem('rt_updated'); } catch (e) {} setTimeout(function () { toast(t('updatedReload')); }, 600); }
 
