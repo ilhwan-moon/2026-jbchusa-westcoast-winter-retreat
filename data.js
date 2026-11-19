@@ -26,7 +26,7 @@
     host: 'Jesus Baptist U.S.A. Conference',
     // 홍보 영상 (유튜브 영상 ID: https://youtu.be/41c0XBJCZZc 의 끝부분)
     video: { youtube: '41c0XBJCZZc' },
-    dateText: L('2026년 11월 27일(금) ~ 29일(일) · 2박 3일', 'Fri, Nov 27 – Sun, Nov 29, 2026', 'Vie 27 – Dom 29 de noviembre de 2026', '2026年11月27日(周五) – 29日(周日)'),
+    dateText: L('2026년 11월 27일(금) ~ 29일(일) · 2박 3일', 'Fri,\u00a0Nov\u00a027 – Sun,\u00a0Nov\u00a029, 2026', 'Vie\u00a027 – Dom\u00a029 de noviembre de\u00a02026', '2026年11月27日(周五) – 29日(周日)'),
     churches: L('LA중앙 · LA코로나 · LA · 라스베가스 · 샌프란시스코 교회', 'LA Central · LA Corona · LA · Las Vegas · San Francisco churches', 'Iglesias LA Central · LA Corona · LA · Las Vegas · San Francisco', 'LA Central · LA Corona · LA · Las Vegas · San Francisco 教会'),
 
     venue: {

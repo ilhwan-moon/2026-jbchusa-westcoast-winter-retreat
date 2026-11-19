@@ -6,7 +6,8 @@
 
   var T = {
     ko: {
-      counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
+      counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상 보기', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
+      sermonsAt: '전체 말씀 · 대강당', nextSermon: '다음 말씀', viewDay: '날짜별 보기', viewTable: '전체 일정표', tableNote: '시간은 오후·오전 표시 없이 줄였습니다. 칸을 누르면 그날 자세한 일정으로 갑니다.',
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
@@ -26,7 +27,8 @@
       inappTitle: '먼저 사파리/크롬으로 열어 주세요', inappSteps: ['오른쪽 위(또는 아래) <b>메뉴</b>를 누르세요', '<b>「다른 브라우저로 열기」</b> 또는 <b>「Safari로 열기」</b>를 누르세요', '열린 화면에서 이 버튼을 다시 누르세요'],
     },
     en: {
-      counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
+      counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch the promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
+      sermonsAt: 'Main Sermons · Main Hall', nextSermon: 'Next', viewDay: 'By day', viewTable: 'Full table', tableNote: 'Times are shortened (no AM/PM). Tap a cell to see that day in detail.',
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
@@ -46,7 +48,8 @@
       inappTitle: 'Please open in Safari/Chrome first', inappSteps: ['Tap the <b>menu</b> at the top (or bottom) right', 'Tap <b>“Open in browser”</b> or <b>“Open in Safari”</b>', 'Then tap this button again'],
     },
     es: {
-      counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
+      counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Ver video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
+      sermonsAt: 'Sermones · Salón Principal', nextSermon: 'Próximo', viewDay: 'Por día', viewTable: 'Tabla completa', tableNote: 'Horas abreviadas (sin a. m./p. m.). Toque una celda para ver el día en detalle.',
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
@@ -67,6 +70,7 @@
     },
     zh: {
       counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 YouTube 中打开',
+      sermonsAt: '全体话语 · 大礼堂', nextSermon: '下一场', viewDay: '按日期', viewTable: '总日程表', tableNote: '时间已简写（不标上午/下午）。点一下即可查看当天详细日程。',
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
@@ -150,7 +154,7 @@
     return LANGS.indexOf(n) !== -1 ? n : 'ko';
   }
 
-  var state = { lang: pickLang(), size: Number(store('rt_size') || 1), view: 'schedule', day: null, dayPicked: false, sig: '' };
+  var state = { lang: pickLang(), size: Number(store('rt_size') || 1), view: 'schedule', day: null, dayPicked: false, sig: '', lastDate: '', mode: 'day' };
   if ([1, 2, 3].indexOf(state.size) === -1) state.size = 1;
 
   function t(k) { var v = T[state.lang][k]; return v == null ? T.ko[k] : v; }
@@ -160,7 +164,19 @@
   // 줄바꿈 정리: 「 · 」로 나뉜 덩어리와 (괄호)는 한 덩어리로 묶어, 줄이 넘치면 덩어리째 다음 줄로 내려갑니다
   // 짧은 덩어리(예: 「2박 3일」)만 묶습니다. 긴 문장을 통째로 묶으면 앞의 표시(✱, 「한국어권:」) 옆에 못 붙고 아래로 떨어지기 때문
   function short(p) { return p.replace(/<[^>]*>|&[a-z#0-9]+;/g, 'x').length <= 16; }
-  function nb(h) { return String(h).split(' · ').map(function (p) { p = p.replace(/([^\s(]+\([^)\s]{1,3}\))/g, '<span class="nw">$1</span>'); p = p.replace(/ (\([^)]*\))/g, function (m, g) { return short(g) ? ' <span class="nw">' + g + '</span>' : m; }); return short(p) ? '<span class="nw">' + p + '</span>' : p; }).join('\u00a0· '); }
+  function nb(h) {
+    var parts = String(h).split(' · ');
+    return parts.map(function (p, i) {
+      p = p.replace(/((?:오전|오후|上午|下午|晚上|早上)?\s?\d{1,2}:\d\d\s?(?:AM|PM|a\. m\.|p\. m\.)?\s?[~–-]\s?(?:오전|오후|上午|下午|晚上|早上)?\s?\d{1,2}:\d\d(?:\s?(?:AM|PM|a\. m\.|p\. m\.))?)/g, '<span class="nw">$1</span>');   // 시간 범위
+      p = p.replace(/([^\s(>]+\([^)\s]{1,3}\))/g, '<span class="nw">$1</span>');   // 29일(일)
+      p = p.replace(/ (\([^)]*\))/g, function (m, g) { return short(g) ? ' <span class="nw">' + g + '</span>' : m; });
+      var sep = i < parts.length - 1 ? ' ·' : '';   // 「·」는 앞 덩어리 끝에 붙여 줄 맨 앞에 오지 않게
+      if (parts.length > 1 && short(p)) return '<span class="nw">' + p + sep + '</span>';
+      if (sep && /<\/span>$/.test(p)) return p.replace(/<\/span>$/, sep + '</span>');   // 「29일(일) ·」처럼 마지막 덩어리에 붙임
+      if (sep) return p.replace(/(\S+)$/, '<span class="nw">$1' + sep + '</span>');
+      return p;   // 한 문장짜리는 묶지 않음 (목록 점 위치 유지)
+    }).join(' ');
+  }
   function xb(o) { return nb(esc(x(o))); }
   function tm(s, e) { return '<span class="nw">' + esc(fmtTime(s, e)) + '</span>'; }
   function ico(n) { return '<span class="ico" aria-hidden="true">' + (ICONS[n] || '') + '</span>'; }
@@ -258,6 +274,7 @@
   function renderSchedule() {
     var st = status();
     // 날짜 탭: 직접 고르지 않았으면 항상 「오늘」을 따라감 (자정이 지나도 자동으로 다음 날)
+    if (st.n.date !== state.lastDate) { state.lastDate = st.n.date; state.dayPicked = false; }   // 날짜가 바뀌면 (27→28→29일) 그날 일정으로 자동 이동
     if (!state.dayPicked) state.day = st.phase === 'during' ? st.day : st.phase === 'after' ? 2 : 0;
     state.sig = st.phase + st.day + '/' + st.cur + '/' + st.next;
     // 수련회 기간에는 큰 그림을 줄여 「지금 / 다음」이 첫 화면에 보이게
@@ -322,6 +339,35 @@
         (live ? '<span class="live-tag"><span class="dot"></span>' + esc(t('now')) + '</span>' : '') + body + '</span></li>';
     }).join('');
     $('youthNote').textContent = '※ ' + x(R.youthNote);
+
+    // 전체 말씀 바로 보기: 날짜·시간·제목 (다음 말씀 표시, 누르면 그날 일정으로)
+    var nextFound = false, nowKey = st.n.date + ' ' + String(Math.floor(st.n.min / 60)).padStart(2, '0') + ':' + String(st.n.min % 60).padStart(2, '0');
+    $('sqList').innerHTML = R.days.map(function (d, di) {
+      return d.items.map(function (it) {
+        if (it.k !== 'sermon') return '';
+        var s = R.sermons[it.n], endKey = d.date + ' ' + it.e, startKey = d.date + ' ' + it.s;
+        var cls = '', tag = '';
+        if (endKey <= nowKey) cls = 'past';
+        else if (startKey <= nowKey) { cls = 'live'; tag = '<span class="sq-tag live-tag"><span class="dot"></span>' + esc(t('now')) + '</span>'; nextFound = true; }
+        else if (!nextFound) { nextFound = true; cls = 'next'; tag = '<span class="sq-tag">' + esc(t('nextSermon')) + '</span>'; }
+        return '<li class="' + cls + '"><button type="button" data-goday="' + di + '"><span class="sq-when"><b class="nw">' + esc(x(d.tab)) + '</b> ' + tm(it.s, it.e) + '</span>' +
+          '<span class="sq-what"><small>' + it.n + '</small><b>' + esc(x(s.title)) + '</b>' + tag + '</span><span class="sq-who">' + xb(s.speaker) + '</span></button></li>';
+      }).join('');
+    }).join('');
+
+    // 전체 일정표 (포스터처럼 3칸)
+    $('tgrid').innerHTML = R.days.map(function (d, di) {
+      var today = st.phase === 'during' && st.day === di;
+      return '<div class="tcol' + (today ? ' today' : '') + '"><button type="button" class="thead" data-goday="' + di + '">' + esc(x(d.tab)) + (today ? '<small>' + esc(t('today')) + '</small>' : '') + '</button>' +
+        d.items.map(function (it, i) {
+          var live = today && st.cur === i, info = itemInfo(it);
+          var tt = (function (s, e) { function h(v) { var q = hm(v); return q.h12 + ':' + q.m; } return h(s) + '~' + (e ? h(e) : ''); })(it.s, it.e);
+          return '<button type="button" class="tcell k-' + it.k + (live ? ' live' : '') + '" data-goday="' + di + '"><span class="tt">' + tt + '</span>' +
+            (info.label ? '<span class="tl">' + esc(info.label) + '</span>' : '') + '<span class="tn">' + esc(info.title) + '</span></button>';
+        }).join('') + '</div>';
+    }).join('');
+    $('dayMode').hidden = state.mode !== 'day'; $('tableMode').hidden = state.mode !== 'table';
+    document.querySelectorAll('#viewSeg button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-mode') === state.mode)); });
   }
 
   /* ── 말씀·장소 ── */
@@ -460,6 +506,12 @@
     applyTheme(next); toast(T[state.lang].themeN[next]);
   });
   if (window.matchMedia) { var mq = matchMedia('(prefers-color-scheme: dark)'); if (mq.addEventListener) mq.addEventListener('change', function () { applyTheme(themeMode()); }); }
+  function goDay(di) {
+    state.day = di; state.dayPicked = true; state.mode = 'day'; renderSchedule();
+    var el = $('viewSeg'); setTimeout(function () { el.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 30);
+  }
+  ['sqList', 'tgrid'].forEach(function (id) { $(id).addEventListener('click', function (e) { var b = e.target.closest('[data-goday]'); if (b) goDay(Number(b.getAttribute('data-goday'))); }); });
+  $('viewSeg').addEventListener('click', function (e) { var b = e.target.closest('button[data-mode]'); if (b) { state.mode = b.getAttribute('data-mode'); renderSchedule(); } });
   $('dayTabs').addEventListener('click', function (e) { var b = e.target.closest('button[data-day]'); if (b) { state.day = Number(b.getAttribute('data-day')); state.dayPicked = true; renderSchedule(); } });
   $('supplyList').addEventListener('click', function (e) {
     var b = e.target.closest('button[data-sup]'); if (!b) return;
@@ -493,7 +545,7 @@
   /* ── 다시 열었을 때 자동 새로고침 ──
    * 홈 화면 앱은 메모리에 남아 있다가 그대로 다시 보여서, 바뀐 내용이 안 보일 수 있습니다.
    * 돌아올 때마다 사이트 파일(ETag)이 바뀌었는지 확인해 바뀌었으면 다시 불러오고, 「지금/다음」은 항상 새로 계산합니다. */
-  var APP_FILES = ['index.html', 'app.js', 'styles.css', 'data.js'];
+  var APP_FILES = ['index.html', 'app.js', 'styles.css', 'data.js', 'snow.js'];
   var fileSigs = null, lastResume = Date.now();
   function readSigs() {
     return Promise.all(APP_FILES.map(function (f) {

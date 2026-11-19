@@ -226,7 +226,8 @@ html[data-size="3"] .checks { grid-template-columns: 1fr; }
 /* ── 연락처 ── */
 /* 전화 카드 (응급 의료 · 진행 문의): 같은 모양, 왼쪽 색 줄로만 구분 */
 .callcard { display: grid; gap: .15rem; padding: .9rem 1rem; margin-bottom: 12px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--blue); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); }
-.cc-k { display: flex; align-items: center; gap: .4rem; color: var(--blue); font-weight: 800; font-size: 1rem; white-space: nowrap; }
+.cc-k { display: flex; align-items: flex-start; gap: .4rem; color: var(--blue); font-weight: 800; font-size: 1rem; }
+.cc-k .ico { margin-top: .2em; }
 .cc-who { font-weight: 800; font-size: 1.1rem; }
 .cc-tel { display: flex; align-items: center; gap: .4rem; white-space: nowrap; color: var(--blue); font-size: 1.3rem; font-weight: 800; font-variant-numeric: tabular-nums; }
 .cc-note { color: var(--muted); font-size: .95rem; }
@@ -322,3 +323,64 @@ dialog.video-dlg { width: min(960px, 96vw); max-width: 96vw; padding: 0; backgro
 .s-meta { flex-wrap: nowrap; align-items: flex-start; }
 .s-meta > .ico { margin-top: .2em; }
 .s-meta > span:not(.ico) { min-width: 0; }
+
+/* 준비물: 화면 폭에 맞춰 1~2칸 */
+.checks { grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+.checks button { word-break: keep-all; }
+/* 강연회 시간: 회차·날짜 위, 시간 아래 (좁은 화면에서 시간이 갈라지지 않게) */
+.rows.times li { grid-template-columns: 1fr; gap: 0; }
+.rows.times .rv { flex-direction: column-reverse; }
+
+/* ── 전체 말씀 바로 보기 ── */
+.sermon-quick { padding: .9rem .9rem .5rem; }
+.sermon-quick .eyebrow { margin-bottom: .4rem; }
+.sq-list { list-style: none; margin: 0; padding: 0; }
+.sq-list li + li { border-top: 1px solid var(--line); }
+.sq-list button { width: 100%; display: grid; grid-template-columns: 1fr; gap: 0; text-align: left; background: none; border: 0; padding: .55rem .3rem; min-height: 56px; cursor: pointer; border-radius: 10px; }
+.sq-when { font-weight: 700; color: var(--blue); font-size: .98rem; }
+.sq-when b { color: var(--ink); margin-right: .2rem; }
+.sq-what { display: flex; align-items: center; flex-wrap: wrap; gap: .1rem .45rem; }
+.sq-what small { display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--primary); color: var(--primary-ink); font-weight: 800; font-size: .8rem; }
+.sq-what b { font-family: var(--serif); font-size: 1.15rem; color: var(--primary); }
+.sq-who { color: var(--muted); font-size: .92rem; padding-left: 1.95rem; }
+.sq-tag { font-size: .78rem; font-weight: 800; color: #fff; background: var(--blue); border-radius: 999px; padding: .05rem .5rem; }
+.sq-tag.live-tag { background: var(--live-soft); color: var(--live); }
+.sq-list li.next button { background: var(--blue-soft); }
+.sq-list li.live button { background: var(--live-soft); }
+.sq-list li.past .sq-when, .sq-list li.past .sq-what b, .sq-list li.past .sq-who { color: var(--muted); }
+.sq-list li.past .sq-what small { background: var(--muted); }
+
+/* ── 날짜별 / 전체 일정표 전환 ── */
+.viewseg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; margin: 4px 0 2px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; scroll-margin-top: 8px; }
+.viewseg button { min-height: 48px; border: 0; border-radius: 10px; background: transparent; font-weight: 800; font-size: 1.02rem; color: var(--ink-2); cursor: pointer; }
+.viewseg button[aria-pressed="true"] { background: var(--surface); color: var(--primary); box-shadow: var(--shadow); }
+
+/* ── 전체 일정표 (3칸) ── */
+.tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+.tcol { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.thead { min-height: 44px; border: 0; border-radius: 10px; background: var(--ink-2); color: var(--surface); font-weight: 800; font-size: .98rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; }
+.tcol.today .thead { background: var(--primary); color: var(--primary-ink); }
+.thead small { font-size: .72rem; }
+.tcell { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1px; padding: .45rem .2rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; min-height: 52px; line-height: 1.25; word-break: keep-all; }
+.tt { font-size: .78rem; font-weight: 700; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tl { font-size: .72rem; font-weight: 800; color: var(--primary); }
+.tn { font-size: .9rem; font-weight: 700; color: var(--ink); }
+.tcell.k-sermon { background: var(--rose); border-color: color-mix(in srgb, var(--primary) 30%, var(--line)); }
+.tcell.k-sermon .tn { color: var(--primary); font-family: var(--serif); font-size: .98rem; }
+.tcell.k-meal { background: color-mix(in srgb, #3f8f7b 12%, var(--surface)); }
+.tcell.k-fellow, .tcell.k-praise { background: var(--blue-soft); }
+.tcell.k-fellow .tn, .tcell.k-praise .tn { color: var(--blue); }
+.tcell.live { outline: 3px solid var(--live); outline-offset: -1px; }
+html[lang^="zh"] .tcell { word-break: normal; }
+
+/* 상담 신청: 한 줄 큰 버튼 */
+.quick { grid-template-columns: 1fr !important; }
+/* 홍보 영상: 작게 (첫 화면 카드 안) */
+.video-link { display: inline-flex; align-items: center; gap: .35rem; margin: .7rem 0 0 .4rem; min-height: 44px; padding: 0 .9rem; border-radius: 999px; border: 1.5px solid #34566a; background: transparent; color: #34566a; font-weight: 700; font-size: .95rem; cursor: pointer; vertical-align: middle; }
+.video-link .ico svg { width: 20px; height: 20px; }
+:root[data-theme="dark"] .video-link { color: #9cc3d8; border-color: #9cc3d8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .video-link { color: #9cc3d8; border-color: #9cc3d8; } }
+/* 은은한 눈 */
+#snow { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 25; }
+@media (prefers-reduced-motion: reduce) { #snow { display: none; } }
+@media print { #snow { display: none; } }

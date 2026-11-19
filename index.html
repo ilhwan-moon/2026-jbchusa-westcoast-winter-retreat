@@ -77,11 +77,12 @@
           <span class="ico" data-ico="chat"></span>
           <span class="q-txt"><b data-i18n="counselBtnShort"></b><small data-i18n="counselSub"></small></span>
         </a>
-        <button type="button" class="quick-btn q-video" id="qVideo">
-          <span class="ico" data-ico="play"></span>
-          <span class="q-txt"><b data-i18n="videoBtn"></b><small data-i18n="videoSub"></small></span>
-        </button>
       </div>
+      <section class="card sermon-quick" id="sermonQuick">
+        <h2 class="eyebrow"><span class="ico" data-ico="bible"></span><span data-i18n="sermonsAt"></span></h2>
+        <ol class="sq-list" id="sqList"></ol>
+      </section>
+
       <div class="hero" id="hero">
         <img class="hero-art" src="hero.jpg" alt="" width="900" height="833">
         <div class="hero-text">
@@ -91,13 +92,24 @@
           <p class="hero-date" id="heroDate"></p>
           <p class="hero-place" id="heroPlace"></p>
           <p class="hero-count" id="heroCount" hidden></p>
+          <button type="button" class="video-link" id="qVideo"><span class="ico" data-ico="play"></span><span data-i18n="videoBtn"></span></button>
         </div>
       </div>
 
 
-      <div class="daytabs" role="tablist" id="dayTabs"></div>
-      <h2 class="day-label" id="dayLabel"></h2>
-      <ol class="sched" id="sched"></ol>
+      <div class="viewseg" role="group" id="viewSeg">
+        <button type="button" data-mode="day" data-i18n="viewDay"></button>
+        <button type="button" data-mode="table" data-i18n="viewTable"></button>
+      </div>
+      <div id="dayMode">
+        <div class="daytabs" role="tablist" id="dayTabs"></div>
+        <h2 class="day-label" id="dayLabel"></h2>
+        <ol class="sched" id="sched"></ol>
+      </div>
+      <div id="tableMode" hidden>
+        <div class="tgrid" id="tgrid"></div>
+        <p class="note" data-i18n="tableNote"></p>
+      </div>
       <p class="note" id="youthNote"></p>
     </section>
 
@@ -234,6 +246,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <canvas id="snow" aria-hidden="true"></canvas>
   <script src="app.js"></script>
+  <script src="snow.js"></script>
 </body>
 </html>
