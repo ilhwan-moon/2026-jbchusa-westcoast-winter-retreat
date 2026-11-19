@@ -6,7 +6,7 @@
 
   var T = {
     ko: {
-      counselBtnShort: '상담 신청하기', counselSub: '전도 · 생활 상담 (QR코드와 같음)', videoBtn: '홍보 영상 보기', videoSub: '누르면 바로 재생됩니다', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '구글 드라이브에서 열기',
+      counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '구글 드라이브에서 열기',
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
@@ -26,7 +26,7 @@
       inappTitle: '먼저 사파리/크롬으로 열어 주세요', inappSteps: ['오른쪽 위(또는 아래) <b>메뉴</b>를 누르세요', '<b>「다른 브라우저로 열기」</b> 또는 <b>「Safari로 열기」</b>를 누르세요', '열린 화면에서 이 버튼을 다시 누르세요'],
     },
     en: {
-      counselBtnShort: 'Sign up for counseling', counselSub: 'Same as the QR code', videoBtn: 'Watch promo video', videoSub: 'Plays right here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in Google Drive',
+      counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in Google Drive',
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
@@ -46,7 +46,7 @@
       inappTitle: 'Please open in Safari/Chrome first', inappSteps: ['Tap the <b>menu</b> at the top (or bottom) right', 'Tap <b>“Open in browser”</b> or <b>“Open in Safari”</b>', 'Then tap this button again'],
     },
     es: {
-      counselBtnShort: 'Inscribirse en consejería', counselSub: 'Igual al código QR', videoBtn: 'Ver video promocional', videoSub: 'Se reproduce aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en Google Drive',
+      counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en Google Drive',
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
@@ -66,7 +66,7 @@
       inappTitle: 'Primero ábralo en Safari/Chrome', inappSteps: ['Toque el <b>menú</b> arriba (o abajo) a la derecha', 'Toque <b>«Abrir en el navegador»</b> o <b>«Abrir en Safari»</b>', 'Luego toque este botón otra vez'],
     },
     zh: {
-      counselBtnShort: '报名商谈', counselSub: '与二维码相同', videoBtn: '观看宣传视频', videoSub: '点击即可播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 Google Drive 中打开',
+      counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 Google Drive 中打开',
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
