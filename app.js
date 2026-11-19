@@ -2,10 +2,11 @@
   'use strict';
   var R = window.RETREAT;
   var LANGS = ['ko', 'en', 'es', 'zh'];
-  var APP_NAME = { ko: '동계수련회', en: 'Winter Retreat', es: 'Retiro', zh: '冬季培灵会' };
+  var APP_NAME = '2026 Winter Retreat';   // 홈 화면 바로가기 이름 (모든 언어 같음)
 
   var T = {
     ko: {
+      counselBtnShort: '상담 신청하기', counselSub: '전도 · 생활 상담 (QR코드와 같음)', videoBtn: '홍보 영상 보기', videoSub: '누르면 바로 재생됩니다', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '구글 드라이브에서 열기',
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
@@ -25,6 +26,7 @@
       inappTitle: '먼저 사파리/크롬으로 열어 주세요', inappSteps: ['오른쪽 위(또는 아래) <b>메뉴</b>를 누르세요', '<b>「다른 브라우저로 열기」</b> 또는 <b>「Safari로 열기」</b>를 누르세요', '열린 화면에서 이 버튼을 다시 누르세요'],
     },
     en: {
+      counselBtnShort: 'Sign up for counseling', counselSub: 'Same as the QR code', videoBtn: 'Watch promo video', videoSub: 'Plays right here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in Google Drive',
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
@@ -44,6 +46,7 @@
       inappTitle: 'Please open in Safari/Chrome first', inappSteps: ['Tap the <b>menu</b> at the top (or bottom) right', 'Tap <b>“Open in browser”</b> or <b>“Open in Safari”</b>', 'Then tap this button again'],
     },
     es: {
+      counselBtnShort: 'Inscribirse en consejería', counselSub: 'Igual al código QR', videoBtn: 'Ver video promocional', videoSub: 'Se reproduce aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en Google Drive',
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
@@ -63,6 +66,7 @@
       inappTitle: 'Primero ábralo en Safari/Chrome', inappSteps: ['Toque el <b>menú</b> arriba (o abajo) a la derecha', 'Toque <b>«Abrir en el navegador»</b> o <b>«Abrir en Safari»</b>', 'Luego toque este botón otra vez'],
     },
     zh: {
+      counselBtnShort: '报名商谈', counselSub: '与二维码相同', videoBtn: '观看宣传视频', videoSub: '点击即可播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 Google Drive 中打开',
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
@@ -105,6 +109,7 @@
     share: '<svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',
     qr: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>',
     phoneDl: '<svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 8v6M9 11l3 3 3-3M10.5 18.5h3"/></svg>',
+    play: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>',
     pageMenu: '<svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="6.5" height="6.5" rx="1.2"/><path d="M13 6h8M13 9.5h8M3 14.5h18M3 19h12"/></svg>',
     sun: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>',
     moon: '<svg viewBox="0 0 24 24"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>',
@@ -152,6 +157,10 @@
   function x(o) { return o == null ? '' : typeof o === 'string' ? o : (o[state.lang] != null ? o[state.lang] : o.ko); }
   function fmt(s, o) { return String(s).replace(/\{(\w+)\}/g, function (_, k) { return o[k] == null ? '' : o[k]; }); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  // 줄바꿈 정리: 「 · 」로 나뉜 덩어리와 (괄호)는 한 덩어리로 묶어, 줄이 넘치면 덩어리째 다음 줄로 내려갑니다
+  function nb(h) { return String(h).split(' · ').map(function (p) { return '<span class="nw">' + p.replace(/ (\([^)]*\))/g, ' <span class="nw">$1</span>') + '</span>'; }).join(' · '); }
+  function xb(o) { return nb(esc(x(o))); }
+  function tm(s, e) { return '<span class="nw">' + esc(fmtTime(s, e)) + '</span>'; }
   function ico(n) { return '<span class="ico" aria-hidden="true">' + (ICONS[n] || '') + '</span>'; }
   function tel(s) { return 'tel:' + String(s).replace(/[^\d+]/g, ''); }
 
@@ -183,7 +192,7 @@
   }
 
   /* ── 화면 모드 ── */
-  function themeMode() { var m = store('rt_theme') || ((document.cookie.match(/(?:^|;\s*)rt_theme=(light|dark|auto)/) || [])[1]); return m === 'light' || m === 'dark' ? m : 'auto'; }
+  function themeMode() { var m = store('rt_theme') || ((document.cookie.match(/(?:^|;\s*)rt_theme=(light|dark|auto)/) || [])[1]); return m === 'dark' || m === 'auto' ? m : 'light'; }   // 처음에는 밝게
   function applyTheme(m) {
     if (m === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', m);
     var dark = m === 'dark' || (m === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
@@ -203,10 +212,10 @@
     var mf = document.querySelector('link[rel="manifest"]');
     var mfHref = L === 'ko' ? 'manifest.webmanifest' : 'manifest.' + L + '.webmanifest';
     if (mf && mf.getAttribute('href') !== mfHref) mf.setAttribute('href', mfHref);
-    var at = document.querySelector('meta[name="apple-mobile-web-app-title"]'); if (at) at.setAttribute('content', APP_NAME[L]);
+    var at = document.querySelector('meta[name="apple-mobile-web-app-title"]'); if (at) at.setAttribute('content', APP_NAME);
     $('brandName').textContent = x(R.short) + ' 2026';
     $('brandSub').textContent = t('sub');
-    document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-i18n]').forEach(function (el) { el.innerHTML = nb(esc(t(el.getAttribute('data-i18n')))); });
     document.querySelectorAll('[data-ico]').forEach(function (el) { el.innerHTML = ICONS[el.getAttribute('data-ico')] || ''; el.setAttribute('aria-hidden', 'true'); });
     document.querySelectorAll('#langSeg button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === L)); });
     $('sizeSeg').setAttribute('aria-label', T[L].textSize); $('sizeSeg').title = T[L].textSize;
@@ -247,9 +256,9 @@
     var st = status();
     if (state.day == null) state.day = st.phase === 'during' ? st.day : st.phase === 'after' ? 2 : 0;
     $('heroTitle').textContent = x(R.title);
-    $('heroTheme').textContent = x(R.theme) + ' · ' + x(R.themeRef);
-    $('heroDate').textContent = x(R.dateText);
-    $('heroPlace').innerHTML = ico('pin') + '<span>' + esc(x(R.venue.name)) + '</span>';
+    $('heroTheme').innerHTML = (state.lang === 'en' ? '' : xb(R.theme) + ' · ') + xb(R.themeRef);   // 영어는 위 필기체와 같은 말이라 생략
+    $('heroDate').innerHTML = xb(R.dateText);
+    $('heroPlace').innerHTML = ico('pin') + '<span>' + xb(R.venue.name) + '</span>';
     var c = $('heroCount'); c.hidden = false;
     if (st.phase === 'before') c.textContent = st.days > 1 ? fmt(t('countBefore'), { n: st.days }) : st.days === 1 ? t('countTomorrow') : t('countToday');
     else if (st.phase === 'during') c.textContent = fmt(t('during'), { n: st.day + 1 });
@@ -261,11 +270,11 @@
       var items = R.days[st.day].items, h = '';
       if (st.cur !== -1) {
         var a = items[st.cur], ai = itemInfo(a);
-        h += '<div class="now-row now-cur"><span class="now-k"><span class="dot"></span>' + esc(t('now')) + '</span><span class="now-t">' + (ai.label ? '<small>' + esc(ai.label) + '</small>' : '') + esc(ai.title) + '</span><span class="now-time">' + esc(fmtTime(a.s, a.e)) + '</span></div>';
+        h += '<div class="now-row now-cur"><span class="now-k"><span class="dot"></span>' + esc(t('now')) + '</span><span class="now-t">' + (ai.label ? '<small>' + esc(ai.label) + '</small>' : '') + esc(ai.title) + '</span><span class="now-time">' + tm(a.s, a.e) + '</span></div>';
       }
       if (st.next !== -1) {
         var b = items[st.next], bi = itemInfo(b);
-        h += '<div class="now-row"><span class="now-k">' + esc(t('next')) + '</span><span class="now-t">' + (bi.label ? '<small>' + esc(bi.label) + '</small>' : '') + esc(bi.title) + '</span><span class="now-time">' + esc(fmtTime(b.s, b.e)) + '</span></div>';
+        h += '<div class="now-row"><span class="now-k">' + esc(t('next')) + '</span><span class="now-t">' + (bi.label ? '<small>' + esc(bi.label) + '</small>' : '') + esc(bi.title) + '</span><span class="now-time">' + tm(b.s, b.e) + '</span></div>';
       }
       if (!h) h = '<p class="now-done">' + esc(t('nowDone')) + '</p>';
       nc.innerHTML = h; nc.hidden = false;
@@ -273,10 +282,10 @@
 
     $('dayTabs').innerHTML = R.days.map(function (d, i) {
       var isToday = st.phase === 'during' && st.day === i;
-      return '<button type="button" role="tab" data-day="' + i + '" aria-selected="' + (state.day === i) + '">' + esc(x(d.tab)) + (isToday ? '<small>' + esc(t('today')) + '</small>' : '') + '</button>';
+      return '<button type="button" role="tab" data-day="' + i + '" aria-selected="' + (state.day === i) + '">' + xb(d.tab) + (isToday ? '<small>' + esc(t('today')) + '</small>' : '') + '</button>';
     }).join('');
     var day = R.days[state.day];
-    $('dayLabel').textContent = x(day.label);
+    $('dayLabel').innerHTML = xb(day.label);
     $('sched').innerHTML = day.items.map(function (it, i) {
       var live = st.phase === 'during' && st.day === state.day && st.cur === i;
       var past = st.phase === 'after' || (st.phase === 'during' && st.day === state.day && (it.e ? toMin(it.e) <= st.n.min : false) && !live) || (st.phase === 'during' && state.day < st.day);
@@ -285,22 +294,22 @@
       if (it.k === 'sermon') {
         var s = R.sermons[it.n];
         body = '<span class="s-label">' + esc(fmt(t('sermonN'), { n: it.n })) + '</span>' +
-          '<span class="s-title">' + esc(x(s.title)) + '</span>' +
-          '<span class="s-meta"><b>' + esc(x(s.speaker)) + '</b></span>' +
-          '<span class="s-meta">' + esc(t('praise')) + ': ' + esc(x(s.praise)) + (s.song ? ' · ' + esc(x(s.song)) : '') + '</span>' +
-          '<span class="s-meta">' + ico('pin') + esc(t('place')) + ': ' + esc(x(R.places[0].where)) + '</span>' +
+          '<span class="s-title">' + xb(s.title) + '</span>' +
+          '<span class="s-meta"><b>' + xb(s.speaker) + '</b></span>' +
+          '<span class="s-meta">' + esc(t('praise')) + ': ' + xb(s.praise) + (s.song ? ' · ' + xb(s.song) : '') + '</span>' +
+          '<span class="s-meta">' + ico('pin') + esc(t('place')) + ': ' + xb(R.places[0].where) + '</span>' +
           '<a class="s-link" href="#word-seminar">' + esc(t('seeSeminar')) + ' ›</a>';
       } else if (it.lang) {
         var mine = R.fellowship.filter(function (f) { return f.lang === state.lang; })[0];
-        body = '<span class="i-title">' + esc(x(it.t)) + '</span>' +
-          (mine ? '<span class="s-meta mine">' + ico('pin') + '<b>' + esc(x(mine.name)) + '</b>: ' + esc(x(mine.where)) + '</span>' : '') +
+        body = '<span class="i-title">' + xb(it.t) + '</span>' +
+          (mine ? '<span class="s-meta mine">' + ico('pin') + '<b>' + xb(mine.name) + '</b>: ' + xb(mine.where) + '</span>' : '') +
           '<details class="others"><summary>' + esc(t('seeAll')) + '</summary><ul>' + R.fellowship.filter(function (f) { return f !== mine; }).map(function (f) {
-            return '<li><b>' + esc(x(f.name)) + '</b>: ' + esc(x(f.where)) + '</li>';
+            return '<li><b>' + xb(f.name) + '</b>: ' + xb(f.where) + '</li>';
           }).join('') + '</ul></details>';
       } else if (it.k === 'leave') {
-        body = '<span class="i-title">' + esc(x(it.t)) + '</span><a class="s-link" href="#info-cleanup">' + esc(t('seeCleanup')) + ' ›</a>';
-      } else body = '<span class="i-title">' + esc(x(it.t)) + '</span>';
-      return '<li class="' + cls + '"><span class="i-time">' + esc(fmtTime(it.s, it.e)) + '</span><span class="i-ico">' + ico(KIND_ICON[it.k]) + '</span><span class="i-body">' +
+        body = '<span class="i-title">' + xb(it.t) + '</span><a class="s-link" href="#info-cleanup">' + esc(t('seeCleanup')) + ' ›</a>';
+      } else body = '<span class="i-title">' + xb(it.t) + '</span>';
+      return '<li class="' + cls + '"><span class="i-time">' + tm(it.s, it.e) + '</span><span class="i-ico">' + ico(KIND_ICON[it.k]) + '</span><span class="i-body">' +
         (live ? '<span class="live-tag"><span class="dot"></span>' + esc(t('now')) + '</span>' : '') + body + '</span></li>';
     }).join('');
     $('youthNote').textContent = '※ ' + x(R.youthNote);
@@ -311,43 +320,43 @@
     $('sermonList').innerHTML = [1, 2, 3, 4].map(function (n) {
       var s = R.sermons[n], when = '';
       R.days.forEach(function (d) { d.items.forEach(function (it) { if (it.k === 'sermon' && it.n === n) when = x(d.tab) + ' · ' + fmtTime(it.s, it.e); }); });
-      return '<li><span class="sn">' + n + '</span><div><b class="st">' + esc(x(s.title)) + '</b><span class="sm">' + esc(x(s.speaker)) + ' · ' + esc(when) + '</span><span class="sm">' + esc(t('praise')) + ': ' + esc(x(s.praise)) + '</span></div></li>';
+      return '<li><span class="sn">' + n + '</span><div><b class="st">' + xb(s.title) + '</b><span class="sm">' + nb(esc(x(s.speaker) + ' · ' + when)) + '</span><span class="sm">' + esc(t('praise')) + ': ' + xb(s.praise) + '</span></div></li>';
     }).join('');
-    $('sermonNotes').innerHTML = R.sermonNotes.map(function (s) { return '<li>' + esc(x(s)) + '</li>'; }).join('');
-    $('placeList').innerHTML = R.places.map(function (p) { return '<li><span class="pn">' + p.n + '</span><div><b>' + esc(x(p.where)) + '</b><span>' + esc(x(p.what)) + '</span></div></li>'; }).join('');
-    $('buildingNote').textContent = '※ ' + x(R.venue.buildings);
+    $('sermonNotes').innerHTML = R.sermonNotes.map(function (s) { return '<li>' + xb(s) + '</li>'; }).join('');
+    $('placeList').innerHTML = R.places.map(function (p) { return '<li><span class="pn">' + p.n + '</span><div><b>' + xb(p.where) + '</b><span>' + xb(p.what) + '</span></div></li>'; }).join('');
+    $('buildingNote').innerHTML = '※ ' + xb(R.venue.buildings);
     $('seminarList').innerHTML = R.seminars.map(function (s) {
       var mine = s.lang === state.lang;
-      return '<li' + (mine ? ' class="mine"' : '') + '><span class="rk">' + esc(x(s.name)) + (mine ? ' <small>' + esc(t('myLang')) + '</small>' : '') + '</span><span class="rv"><b>' + esc(x(s.where)) + '</b><span>' + esc(x(s.who)) + '</span></span></li>';
+      return '<li' + (mine ? ' class="mine"' : '') + '><span class="rk">' + xb(s.name) + (mine ? ' <small>' + esc(t('myLang')) + '</small>' : '') + '</span><span class="rv"><b>' + xb(s.where) + '</b><span>' + xb(s.who) + '</span></span></li>';
     }).join('');
     $('seminarTimes').innerHTML = R.seminarTimes.map(function (s) {
-      return '<li><span class="rk">' + esc(fmt(t('seminarN'), { n: s.n })) + '</span><span class="rv"><b>' + esc(fmtTime(s.s, s.e)) + '</b><span>' + esc(x(s.when)) + '</span></span></li>';
+      return '<li><span class="rk">' + esc(fmt(t('seminarN'), { n: s.n })) + '</span><span class="rv"><b>' + tm(s.s, s.e) + '</b><span>' + xb(s.when) + '</span></span></li>';
     }).join('');
     $('fellowList').innerHTML = R.fellowship.map(function (f) {
       var mine = f.lang === state.lang;
-      return '<li' + (mine ? ' class="mine"' : '') + '><span class="rk">' + esc(x(f.name)) + '</span><span class="rv"><b>' + esc(x(f.where)) + '</b></span></li>';
+      return '<li' + (mine ? ' class="mine"' : '') + '><span class="rk">' + xb(f.name) + '</span><span class="rv"><b>' + xb(f.where) + '</b></span></li>';
     }).join('');
     $('counselText').innerHTML = x(R.counsel.text);
-    $('counselBtn').href = R.counsel.url;
+    $('counselBtn').href = R.counsel.url; $('qCounsel').href = R.counsel.url;
     $('themeHead').textContent = x(R.theme);
     $('themeVerse').textContent = x(R.themeVerse);
     $('themeRef').textContent = x(R.themeRef);
-    $('pillars').innerHTML = R.pillars.map(function (p) { return '<div class="pillar"><b>' + esc(x(p.h)) + '</b><p>' + esc(x(p.v)) + '</p><cite>' + esc(x(p.r)) + '</cite></div>'; }).join('');
+    $('pillars').innerHTML = R.pillars.map(function (p) { return '<div class="pillar"><b>' + xb(p.h) + '</b><p>' + xb(p.v) + '</p><cite>' + xb(p.r) + '</cite></div>'; }).join('');
   }
 
   /* ── 생활 안내 ── */
   function supplies() { try { return JSON.parse(store('rt_sup') || '{}') || {}; } catch (e) { return {}; } }
   function renderInfo() {
-    $('lodgingList').innerHTML = R.lodging.map(function (l) { return '<li><span class="rk">' + esc(x(l.where)) + '</span><span class="rv"><b>' + esc(x(l.who)) + '</b></span></li>'; }).join('');
-    $('lodgingRules').innerHTML = R.lodgingRules.map(function (s) { return '<li>' + esc(x(s)) + '</li>'; }).join('');
+    $('lodgingList').innerHTML = R.lodging.map(function (l) { return '<li><span class="rk">' + xb(l.where) + '</span><span class="rv"><b>' + xb(l.who) + '</b></span></li>'; }).join('');
+    $('lodgingRules').innerHTML = R.lodgingRules.map(function (s) { return '<li>' + xb(s) + '</li>'; }).join('');
     $('ruleList').innerHTML = R.rules.map(function (s) { return '<li>' + x(s) + '</li>'; }).join('');
     $('kidsTitle').textContent = x(R.kidsTitle);
     $('kidsList').innerHTML = R.kids.map(function (s) { return '<li>' + x(s) + '</li>'; }).join('');
     var sp = supplies();
     $('supplyList').innerHTML = R.supplies.map(function (s) {
-      return '<li><button type="button" data-sup="' + s.id + '" aria-pressed="' + !!sp[s.id] + '"><span class="box">' + ICONS.check + '</span>' + esc(x(s.t)) + '</button></li>';
+      return '<li><button type="button" data-sup="' + s.id + '" aria-pressed="' + !!sp[s.id] + '"><span class="box">' + ICONS.check + '</span>' + xb(s.t) + '</button></li>';
     }).join('');
-    $('cleanupList').innerHTML = R.cleanup.map(function (c) { return '<li><span class="rk">' + esc(x(c.where)) + '</span><span class="rv"><b>' + esc(x(c.who)) + '</b></span></li>'; }).join('');
+    $('cleanupList').innerHTML = R.cleanup.map(function (c) { return '<li><span class="rk">' + xb(c.where) + '</span><span class="rv"><b>' + xb(c.who) + '</b></span></li>'; }).join('');
   }
 
   /* ── 연락처 ── */
@@ -358,11 +367,11 @@
     $('inqBtn').href = tel(C.inquiry.tel);
     $('inqWho').textContent = x(C.inquiry.who); $('inqTel').textContent = C.inquiry.tel; $('inqNote').textContent = x(C.inquiry.note);
     $('deptList').innerHTML = C.depts.map(function (d) {
-      return '<li><a href="' + tel(d.tel) + '"><span class="dk">' + esc(x(d.d)) + '</span><span class="dw">' + esc(x(d.who)) + '</span><span class="dt">' + ICONS.phone + esc(d.tel) + '</span></a></li>';
+      return '<li><a href="' + tel(d.tel) + '"><span class="dk">' + xb(d.d) + '</span><span class="dw">' + xb(d.who) + '</span><span class="dt">' + ICONS.phone + esc(d.tel) + '</span></a></li>';
     }).join('');
-    $('venueName').textContent = x(R.venue.name);
-    $('venueAddr').textContent = R.venue.address;
-    $('venueBldg').textContent = '※ ' + x(R.venue.buildings);
+    $('venueName').innerHTML = xb(R.venue.name);
+    $('venueAddr').innerHTML = R.venue.address.split(/, (?=[A-Z][a-z])/).map(function (p, i, a) { return '<span class="nw">' + esc(p) + (i < a.length - 1 ? ',' : '') + '</span>'; }).join(' ');
+    $('venueBldg').innerHTML = '※ ' + xb(R.venue.buildings);
     $('mapBtn').href = R.venue.map;
     $('footMeta').textContent = R.host;
   }
@@ -433,7 +442,7 @@
   }
   $('sizeHintClose').addEventListener('click', function () { $('sizeHint').hidden = true; store('rt_hint', '1'); });
   $('themeBtn').addEventListener('click', function () {
-    var next = { auto: 'light', light: 'dark', dark: 'auto' }[themeMode()];
+    var next = { light: 'dark', dark: 'auto', auto: 'light' }[themeMode()];
     store('rt_theme', next); try { document.cookie = 'rt_theme=' + next + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {}
     applyTheme(next); toast(T[state.lang].themeN[next]);
   });
@@ -457,6 +466,15 @@
     else { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'; s.onload = draw; document.head.appendChild(s); }
     $('qrDialog').showModal();
   });
+  // 홍보 영상: 누를 때만 불러옵니다 (데이터 절약)
+  $('qVideo').addEventListener('click', function () {
+    $('videoFrame').src = 'https://drive.google.com/file/d/' + R.video.drive + '/preview';
+    $('videoOpen').href = 'https://drive.google.com/file/d/' + R.video.drive + '/view';
+    $('videoDialog').showModal();
+  });
+  $('videoClose').addEventListener('click', function () { $('videoDialog').close(); });
+  $('videoDialog').addEventListener('close', function () { $('videoFrame').src = 'about:blank'; });   // 닫으면 소리도 멈춤
+  $('videoDialog').addEventListener('click', function (e) { if (e.target === $('videoDialog')) $('videoDialog').close(); });
   $('qrClose').addEventListener('click', function () { $('qrDialog').close(); });
 
   /* ── 다시 열었을 때 자동 새로고침 ──

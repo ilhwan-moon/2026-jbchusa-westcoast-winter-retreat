@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -22,14 +22,14 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="동계수련회">
+  <meta name="apple-mobile-web-app-title" content="2026 Winter Retreat">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    (function () { try { var m = localStorage.getItem('rt_theme') || ((document.cookie.match(/(?:^|;\s*)rt_theme=(light|dark)/) || [])[1]); if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-theme', m); } catch (e) {} })();
+    (function () { try { var m = localStorage.getItem('rt_theme') || ((document.cookie.match(/(?:^|;\s*)rt_theme=(light|dark|auto)/) || [])[1]); if (m !== 'auto' && m !== 'dark') m = 'light'; if (m !== 'auto') document.documentElement.setAttribute('data-theme', m); } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); } })();
   </script>
   <script src="data.js"></script>
 </head>
@@ -70,6 +70,16 @@
   <main id="main" class="wrap">
     <!-- ① 일정 -->
     <section class="view" id="v-schedule" data-view="schedule">
+      <div class="quick">
+        <a class="quick-btn q-counsel" id="qCounsel" target="_blank" rel="noopener">
+          <span class="ico" data-ico="chat"></span>
+          <span class="q-txt"><b data-i18n="counselBtnShort"></b><small data-i18n="counselSub"></small></span>
+        </a>
+        <button type="button" class="quick-btn q-video" id="qVideo">
+          <span class="ico" data-ico="play"></span>
+          <span class="q-txt"><b data-i18n="videoBtn"></b><small data-i18n="videoSub"></small></span>
+        </button>
+      </div>
       <div class="hero">
         <img class="hero-art" src="hero.jpg" alt="" width="900" height="833">
         <div class="hero-text">
@@ -81,6 +91,7 @@
           <p class="hero-count" id="heroCount" hidden></p>
         </div>
       </div>
+
 
       <div class="now card" id="nowCard" hidden></div>
 
@@ -210,6 +221,15 @@
       <ol class="ins-steps" id="insSteps"></ol>
       <button type="button" class="btn primary" id="insClose" data-i18n="ok"></button>
     </div>
+  </dialog>
+
+  <dialog id="videoDialog" class="video-dlg">
+    <div class="vd-head">
+      <b data-i18n="videoTitle"></b>
+      <button type="button" class="btn" id="videoClose" data-i18n="close"></button>
+    </div>
+    <div class="vd-frame"><iframe id="videoFrame" title="Promo video" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+    <p class="vd-foot"><a id="videoOpen" target="_blank" rel="noopener"><span data-i18n="videoOpen"></span> ›</a></p>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

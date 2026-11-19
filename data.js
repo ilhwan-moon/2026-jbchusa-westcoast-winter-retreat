@@ -24,6 +24,8 @@
       '你们该效法我，像我效法基督一样。'),
     tagline: 'A Life, Piece by Piece, to Be Like Him',
     host: 'Jesus Baptist U.S.A. Conference',
+    // 홍보 영상 (구글 드라이브 파일 ID, 「링크가 있는 모든 사용자」 보기 권한 필요)
+    video: { drive: '1BEn4RGByw1d76PswVkXRpAv9dK5WugMJ' },
     dateText: L('2026년 11월 27일(금) ~ 29일(일) · 2박 3일', 'Fri, Nov 27 – Sun, Nov 29, 2026', 'Vie 27 – Dom 29 de noviembre de 2026', '2026年11月27日(周五) – 29日(周日)'),
     churches: L('LA중앙 · LA코로나 · LA · 라스베가스 · 샌프란시스코 교회', 'LA Central · LA Corona · LA · Las Vegas · San Francisco churches', 'Iglesias LA Central · LA Corona · LA · Las Vegas · San Francisco', 'LA Central · LA Corona · LA · Las Vegas · San Francisco 教会'),
 

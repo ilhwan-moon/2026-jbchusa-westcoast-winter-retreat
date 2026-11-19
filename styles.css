@@ -91,12 +91,12 @@ main { padding-top: 14px; }
 
 /* ── 첫 화면 ── */
 .hero { position: relative; border-radius: 22px; overflow: hidden; background: linear-gradient(180deg, #f7f2ea, #efe7da); border: 1px solid var(--line); box-shadow: var(--shadow); margin-bottom: 14px; }
-.hero-art { display: block; width: 100%; height: auto; max-height: 190px; object-fit: cover; object-position: 50% 50%; }
+.hero-art { display: block; width: 100%; height: auto; max-height: 160px; object-fit: cover; object-position: 50% 50%; }
 .hero-text { padding: 14px 18px 18px; color: #241d1a; }
-.hero-tag { margin: 0; font-size: .82rem; letter-spacing: .08em; color: #7a6e66; }
+.hero-tag { margin: 0; font-size: .82rem; letter-spacing: .06em; color: #7a6e66; text-wrap: balance; }
 .hero-title { margin: .15rem 0 .1rem; font-family: var(--serif); font-size: 1.6rem; line-height: 1.25; color: #8a2e22; }
 .hero-theme { margin: 0 0 .6rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .6rem; }
-.script { font-family: "Great Vibes", cursive; font-size: 2rem; color: #946a1c; line-height: 1.1; }
+.script { font-family: "Great Vibes", cursive; font-size: 1.75rem; color: #946a1c; line-height: 1.1; }
 .hero-theme-t { color: #4d4440; font-weight: 700; font-size: .98rem; }
 .hero-date { margin: 0; font-weight: 800; font-size: 1.12rem; color: #34566a; }
 .hero-place { margin: .2rem 0 0; display: flex; align-items: center; gap: .35rem; color: #4d4440; font-weight: 600; }
@@ -276,3 +276,31 @@ dialog::backdrop { background: rgba(0,0,0,.5); }
 .toast { visibility: hidden; position: fixed; left: 50%; bottom: calc(90px + env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(150%); background: #222; color: #fff; padding: .7rem 1.2rem; border-radius: 999px; font-weight: 600; transition: transform .25s; z-index: 60; max-width: 90vw; text-align: center; }
 .toast.show { visibility: visible; transform: translateX(-50%) translateY(0); }
 @media print { .bottomnav, .topbar, .foot { display: none !important; } body { padding-bottom: 0; } .view[hidden] { display: block !important; } }
+
+/* ── 줄바꿈 정리: 의미 덩어리는 통째로 다음 줄로 ── */
+.nw { display: inline-block; }
+.hero-title, .s-title, .st, .eyebrow, .i-title, .now-t, .day-label, .venue-name, .q-txt b { text-wrap: balance; }
+p, li, .s-meta, .sm { text-wrap: pretty; }
+
+/* ── 첫 화면 바로가기 (상담 신청 · 홍보 영상) ── */
+.quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 14px; }
+.quick-btn { display: flex; align-items: center; gap: .6rem; min-height: 72px; padding: .7rem .9rem; border-radius: 16px; border: 0; text-decoration: none; cursor: pointer; text-align: left; box-shadow: var(--shadow); font: inherit; }
+.quick-btn .ico svg { width: 34px; height: 34px; }
+.q-txt { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
+.q-txt b { font-size: 1.08rem; }
+.q-txt small { font-size: .85rem; opacity: .92; }
+.q-counsel { background: #8a2e22; color: #fff; }
+.q-video { background: #34566a; color: #fff; }
+html[data-size="2"] .quick, html[data-size="3"] .quick { grid-template-columns: 1fr; }
+@media (max-width: 360px) { .quick { grid-template-columns: 1fr; } }
+
+/* ── 홍보 영상 창 ── */
+dialog.video-dlg { width: min(960px, 96vw); max-width: 96vw; padding: 0; background: #111; color: #fff; }
+.vd-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; }
+.vd-head b { font-size: 1.05rem; }
+.vd-head .btn { background: #fff; color: #111; border: 0; }
+.vd-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.vd-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.vd-foot { margin: 0; padding: 10px 12px 14px; text-align: right; }
+.vd-foot a { color: #9cc3d8; font-weight: 700; display: inline-flex; min-height: 44px; align-items: center; }
+@media (max-width: 340px) { .seg button { padding: 0 5px; font-size: 13.5px; } .sizeseg button { width: 30px; } .theme-btn { width: 38px; } .controls { gap: 4px; } }
