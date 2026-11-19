@@ -9,6 +9,7 @@
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 「가 가 가」에서 큰 글씨를 누르세요',
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
       nav: { schedule: '일정', word: '말씀·장소', info: '생활 안내', contact: '연락처' },
+      toc: '바로가기', jump: { sermons: '전체 말씀', places: '장소 안내', seminar: '성경 강연회', fellow: '언어권 교제', counsel: '상담', theme: '주제 말씀', lodging: '숙소', rules: '지켜 주세요', kids: '자녀', supplies: '준비물', cleanup: '청소 구역' },
       now: '지금', next: '다음 순서', nowDone: '오늘 일정이 모두 끝났습니다. 편히 쉬세요.', today: '오늘',
       countBefore: '수련회까지 {n}일 남았습니다', countTomorrow: '내일 수련회가 시작됩니다!', countToday: '오늘 수련회가 시작됩니다!', during: '수련회 {n}일째입니다', after: '은혜로운 수련회였습니다. 감사합니다!',
       sermonN: '전체 말씀 {n}', speaker: '강사', praise: '특별찬양', song: '특송', place: '장소',
@@ -28,6 +29,7 @@
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap a bigger “A” at the top right.',
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
       nav: { schedule: 'Schedule', word: 'Sermons', info: 'Guide', contact: 'Contacts' },
+      toc: 'Jump to', jump: { sermons: 'Sermons', places: 'Locations', seminar: 'Seminars', fellow: 'Fellowship', counsel: 'Counseling', theme: 'Theme', lodging: 'Lodging', rules: 'Rules', kids: 'Children', supplies: 'What to bring', cleanup: 'Clean-up' },
       now: 'Now', next: 'Next', nowDone: "Today's program is over. Have a good rest.", today: 'Today',
       countBefore: '{n} days until the retreat', countTomorrow: 'The retreat starts tomorrow!', countToday: 'The retreat starts today!', during: 'Retreat day {n}', after: 'Thank you for a blessed retreat!',
       sermonN: 'Main Sermon {n}', speaker: 'Speaker', praise: 'Special praise', song: 'Song', place: 'Place',
@@ -47,6 +49,7 @@
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.',
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
       nav: { schedule: 'Horario', word: 'Sermones', info: 'Guía', contact: 'Contactos' },
+      toc: 'Ir a', jump: { sermons: 'Sermones', places: 'Lugares', seminar: 'Seminarios', fellow: 'Por idioma', counsel: 'Consejería', theme: 'Tema', lodging: 'Alojamiento', rules: 'Normas', kids: 'Niños', supplies: 'Qué traer', cleanup: 'Limpieza' },
       now: 'Ahora', next: 'Siguiente', nowDone: 'El programa de hoy terminó. Que descanse.', today: 'Hoy',
       countBefore: 'Faltan {n} días para el retiro', countTomorrow: '¡El retiro empieza mañana!', countToday: '¡El retiro empieza hoy!', during: 'Día {n} del retiro', after: '¡Gracias por un retiro de bendición!',
       sermonN: 'Sermón {n}', speaker: 'Predicador', praise: 'Alabanza especial', song: 'Canto', place: 'Lugar',
@@ -66,6 +69,7 @@
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角较大的「A」。',
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
       nav: { schedule: '日程', word: '话语·地点', info: '生活须知', contact: '联系' },
+      toc: '快速前往', jump: { sermons: '话语', places: '地点', seminar: '研讨会', fellow: '分组交通', counsel: '商谈', theme: '主题', lodging: '寝室', rules: '须知', kids: '儿童', supplies: '准备物品', cleanup: '清洁区域' },
       now: '现在', next: '下一项', nowDone: '今天的日程已全部结束，请好好休息。', today: '今天',
       countBefore: '距离培灵会还有 {n} 天', countTomorrow: '培灵会明天开始！', countToday: '培灵会今天开始！', during: '培灵会第 {n} 天', after: '感谢大家，培灵会蒙恩结束！',
       sermonN: '话语 {n}', speaker: '讲员', praise: '特别赞美', song: '诗歌', place: '地点',
@@ -120,6 +124,8 @@
   };
   var KIND_ICON = { meal: 'meal', sermon: 'bible', fellow: 'people', praise: 'music', rest: 'rest', sleep: 'moonS', wash: 'drop', reg: 'clip', supper: 'cup', leave: 'car' };
   var VIEWS = [['schedule', 'calendar'], ['word', 'bible'], ['info', 'info'], ['contact', 'phone']];
+  // 긴 화면 맨 위의 바로가기 버튼. 주소는 #word-seminar 처럼 「화면-항목」, 카드 id는 sec-word-seminar
+  var SECTIONS = { word: ['sermons', 'places', 'seminar', 'fellow', 'counsel', 'theme'], info: ['lodging', 'rules', 'kids', 'supplies', 'cleanup'] };
 
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   var $ = function (id) { return document.getElementById(id); };
@@ -220,12 +226,39 @@
     $('bottomnav').innerHTML = VIEWS.map(function (v) {
       return '<a href="#' + v[0] + '" data-view="' + v[0] + '"' + (state.view === v[0] ? ' aria-current="page"' : '') + '>' + ico(v[1]) + '<span>' + esc(T[L].nav[v[0]]) + '</span></a>';
     }).join('');
+    Object.keys(SECTIONS).forEach(function (v) {
+      var nav = document.querySelector('.toc[data-toc="' + v + '"]'); if (!nav) return;
+      nav.setAttribute('aria-label', T[L].toc);
+      nav.innerHTML = SECTIONS[v].map(function (k) { return '<a href="#' + v + '-' + k + '" data-jump="' + v + '-' + k + '">' + esc(T[L].jump[k]) + '</a>'; }).join('');
+    });
+  }
+
+  /* ── 상단바 높이 ──
+   * 휴대폰에서는 상단바가 두 줄(이름 / 언어·글씨 크기)입니다. 내려 읽을 때는 이름 줄을 밀어 올려 설정 줄만 남기고,
+   * 실제로 보이는 높이를 --topbar-h 에 적어 날짜 탭이 상단바 바로 아래에 붙게 합니다. */
+  function syncTopbar() {
+    var tb = $('top'), ctr = tb.querySelector('.controls'), br = tb.querySelector('.brand');
+    var twoRows = ctr.offsetTop > br.offsetTop + br.offsetHeight / 2;
+    var shift = twoRows ? Math.max(0, ctr.offsetTop - 6) : 0;
+    var rs = document.documentElement.style;
+    rs.setProperty('--topbar-shift', shift + 'px');
+    rs.setProperty('--topbar-h', (tb.offsetHeight - shift) + 'px');
   }
 
   /* ── 일정 ── */
+  function myFellow() { return R.fellowship.filter(function (f) { return f.lang === state.lang; })[0]; }
   function itemInfo(it) {
-    if (it.k === 'sermon') { var s = R.sermons[it.n]; return { title: x(s.title), label: fmt(t('sermonN'), { n: it.n }) }; }
+    if (it.k === 'sermon') { var s = R.sermons[it.n]; return { title: x(s.title), label: fmt(t('sermonN'), { n: it.n }), where: x(R.places[0].where) }; }
+    if (it.lang) { var mine = myFellow(); return { title: x(it.t), where: mine ? x(mine.where) : '' }; }
     return { title: x(it.t) };
+  }
+  // 「지금 / 다음 순서」 한 줄: 제목 · 시간 · (있으면) 장소
+  function nowRow(it, cur) {
+    var i = itemInfo(it);
+    return '<div class="now-row' + (cur ? ' now-cur' : '') + '"><span class="now-k">' + (cur ? '<span class="dot"></span>' : '') + esc(t(cur ? 'now' : 'next')) + '</span><span class="now-main">' +
+      '<span class="now-t">' + (i.label ? '<small>' + esc(i.label) + '</small>' : '') + esc(i.title) + '</span>' +
+      '<span class="now-time">' + esc(fmtTime(it.s, it.e)) + '</span>' +
+      (i.where ? '<span class="now-where">' + ico('pin') + '<span>' + esc(i.where) + '</span></span>' : '') + '</span></div>';
   }
   function status() {
     var n = nowLA(), idx = -1;
@@ -243,12 +276,23 @@
     return { phase: 'during', n: n, day: idx, cur: cur, next: nxt };
   }
 
+  var lastDate = null;
   function renderSchedule() {
     var st = status();
-    if (state.day == null) state.day = st.phase === 'during' ? st.day : st.phase === 'after' ? 2 : 0;
+    // 처음 열 때, 그리고 앱을 켜 둔 채 날짜가 바뀌었을 때는 오늘 날짜 탭을 보여 줍니다
+    if (state.day == null || (st.phase === 'during' && lastDate && lastDate !== st.n.date)) state.day = st.phase === 'during' ? st.day : st.phase === 'after' ? R.days.length - 1 : 0;
+    lastDate = st.n.date;
+    // 수련회 중에는 「지금 / 다음」과 시간표가 맨 위, 포스터는 맨 아래. 그 밖에는 포스터가 맨 위
+    var sec = $('v-schedule'), hero = sec.querySelector('.hero');
+    sec.setAttribute('data-phase', st.phase);
+    if (st.phase === 'during') { if (sec.lastElementChild !== hero) sec.appendChild(hero); }
+    else if (sec.firstElementChild !== hero) sec.insertBefore(hero, sec.firstElementChild);
     $('heroTitle').textContent = x(R.title);
-    $('heroTheme').textContent = x(R.theme) + ' · ' + x(R.themeRef);
-    $('heroDate').textContent = x(R.dateText);
+    // 영어는 필기체 문구와 주제가 같은 글이라 성경 구절만 보여 줍니다
+    var scriptText = (sec.querySelector('.script') || {}).textContent;
+    $('heroTheme').textContent = (x(R.theme) === scriptText ? '' : x(R.theme) + ' · ') + x(R.themeRef);
+    // 「날짜 · 2박 3일」처럼 가운뎃점으로 나뉜 덩어리는 중간에서 줄이 끊기지 않게 묶습니다
+    $('heroDate').innerHTML = x(R.dateText).split(' · ').map(function (s) { return '<span>' + esc(s) + '</span>'; }).join(' · ');
     $('heroPlace').innerHTML = ico('pin') + '<span>' + esc(x(R.venue.name)) + '</span>';
     var c = $('heroCount'); c.hidden = false;
     if (st.phase === 'before') c.textContent = st.days > 1 ? fmt(t('countBefore'), { n: st.days }) : st.days === 1 ? t('countTomorrow') : t('countToday');
@@ -259,14 +303,8 @@
     var nc = $('nowCard');
     if (st.phase === 'during') {
       var items = R.days[st.day].items, h = '';
-      if (st.cur !== -1) {
-        var a = items[st.cur], ai = itemInfo(a);
-        h += '<div class="now-row now-cur"><span class="now-k"><span class="dot"></span>' + esc(t('now')) + '</span><span class="now-t">' + (ai.label ? '<small>' + esc(ai.label) + '</small>' : '') + esc(ai.title) + '</span><span class="now-time">' + esc(fmtTime(a.s, a.e)) + '</span></div>';
-      }
-      if (st.next !== -1) {
-        var b = items[st.next], bi = itemInfo(b);
-        h += '<div class="now-row"><span class="now-k">' + esc(t('next')) + '</span><span class="now-t">' + (bi.label ? '<small>' + esc(bi.label) + '</small>' : '') + esc(bi.title) + '</span><span class="now-time">' + esc(fmtTime(b.s, b.e)) + '</span></div>';
-      }
+      if (st.cur !== -1) h += nowRow(items[st.cur], true);
+      if (st.next !== -1) h += nowRow(items[st.next], false);
       if (!h) h = '<p class="now-done">' + esc(t('nowDone')) + '</p>';
       nc.innerHTML = h; nc.hidden = false;
     } else nc.hidden = true;
@@ -277,6 +315,8 @@
     }).join('');
     var day = R.days[state.day];
     $('dayLabel').textContent = x(day.label);
+    // 일정표는 1분마다 다시 그려집니다. 펼쳐 둔 「다른 언어 장소」가 그때 저절로 접히지 않게 기억해 둡니다
+    var othersOpen = !!document.querySelector('#sched details[open]');
     $('sched').innerHTML = day.items.map(function (it, i) {
       var live = st.phase === 'during' && st.day === state.day && st.cur === i;
       var past = st.phase === 'after' || (st.phase === 'during' && st.day === state.day && (it.e ? toMin(it.e) <= st.n.min : false) && !live) || (st.phase === 'during' && state.day < st.day);
@@ -291,18 +331,19 @@
           '<span class="s-meta">' + ico('pin') + esc(t('place')) + ': ' + esc(x(R.places[0].where)) + '</span>' +
           '<a class="s-link" href="#word-seminar">' + esc(t('seeSeminar')) + ' ›</a>';
       } else if (it.lang) {
-        var mine = R.fellowship.filter(function (f) { return f.lang === state.lang; })[0];
+        var mine = myFellow();
         body = '<span class="i-title">' + esc(x(it.t)) + '</span>' +
-          (mine ? '<span class="s-meta mine">' + ico('pin') + '<b>' + esc(x(mine.name)) + '</b>: ' + esc(x(mine.where)) + '</span>' : '') +
+          (mine ? '<span class="s-meta mine">' + ico('pin') + '<span><b>' + esc(x(mine.name)) + '</b>: ' + esc(x(mine.where)) + '</span></span>' : '') +
           '<details class="others"><summary>' + esc(t('seeAll')) + '</summary><ul>' + R.fellowship.filter(function (f) { return f !== mine; }).map(function (f) {
             return '<li><b>' + esc(x(f.name)) + '</b>: ' + esc(x(f.where)) + '</li>';
           }).join('') + '</ul></details>';
       } else if (it.k === 'leave') {
         body = '<span class="i-title">' + esc(x(it.t)) + '</span><a class="s-link" href="#info-cleanup">' + esc(t('seeCleanup')) + ' ›</a>';
       } else body = '<span class="i-title">' + esc(x(it.t)) + '</span>';
-      return '<li class="' + cls + '"><span class="i-time">' + esc(fmtTime(it.s, it.e)) + '</span><span class="i-ico">' + ico(KIND_ICON[it.k]) + '</span><span class="i-body">' +
+      return '<li class="' + cls + '"' + (live ? ' aria-current="time"' : '') + '><span class="i-time">' + esc(fmtTime(it.s, it.e)) + '</span><span class="i-ico">' + ico(KIND_ICON[it.k]) + '</span><span class="i-body">' +
         (live ? '<span class="live-tag"><span class="dot"></span>' + esc(t('now')) + '</span>' : '') + body + '</span></li>';
     }).join('');
+    if (othersOpen) { var od = document.querySelector('#sched details'); if (od) od.open = true; }
     $('youthNote').textContent = '※ ' + x(R.youthNote);
   }
 
@@ -367,25 +408,44 @@
     $('footMeta').textContent = R.host;
   }
 
-  function render() { renderStatic(); renderSchedule(); renderWord(); renderInfo(); renderContact(); showView(false); syncUrl(); }
+  function render() { renderStatic(); renderSchedule(); renderWord(); renderInfo(); renderContact(); showView(false); syncUrl(); syncTopbar(); }
 
   /* ── 화면 전환 (#schedule #word #info #contact) ── */
   function viewFromHash() {
     var h = (location.hash || '').slice(1), v = h.split('-')[0];
     return VIEWS.some(function (q) { return q[0] === v; }) ? { v: v, anchor: h.indexOf('-') !== -1 ? h : '' } : { v: 'schedule', anchor: '' };
   }
-  var ANCHORS = { 'word-seminar': 'seminarList', 'info-cleanup': 'cleanupList' };
+  var reduceMotion = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function scrollToSection(el, smooth) {
+    el.scrollIntoView({ block: 'start', behavior: smooth && !reduceMotion ? 'smooth' : 'auto' });
+    el.setAttribute('tabindex', '-1'); try { el.focus({ preventScroll: true }); } catch (e) {}   // 화면 읽기 프로그램도 그 자리부터 읽도록
+  }
   function showView(scroll) {
     var r = viewFromHash(); state.view = r.v;
     document.querySelectorAll('.view').forEach(function (s) { s.hidden = s.getAttribute('data-view') !== r.v; });
     document.querySelectorAll('#bottomnav a').forEach(function (a) { if (a.getAttribute('data-view') === r.v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
     if (scroll) {
-      var el = r.anchor && $(ANCHORS[r.anchor]);
-      if (el) setTimeout(function () { el.closest('.card').scrollIntoView({ block: 'start' }); }, 30);
+      var el = r.anchor && $('sec-' + r.anchor);
+      if (el) setTimeout(function () { scrollToSection(el, false); }, 30);
       else window.scrollTo(0, 0);
     }
   }
   window.addEventListener('hashchange', function () { showView(true); syncUrl(); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[data-jump], #bottomnav a') : null; if (!a) return;
+    var jump = a.getAttribute('data-jump');
+    if (jump) {   // 바로가기 버튼: 뒤로 가기 기록을 쌓지 않고 그 자리로 이동
+      var el = $('sec-' + jump); if (!el) return;
+      e.preventDefault();
+      try { history.replaceState(null, '', location.pathname + location.search + '#' + jump); } catch (err) {}
+      scrollToSection(el, true);
+    } else if (a.getAttribute('href') === (location.hash || '#schedule')) {   // 보고 있는 메뉴를 다시 누르면 맨 위로
+      e.preventDefault(); window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+  });
+  window.addEventListener('resize', syncTopbar);
+  if (window.ResizeObserver) new ResizeObserver(syncTopbar).observe($('top'));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncTopbar);
 
   /* ── 주소에 언어 남기기 ── */
   function syncUrl() {
@@ -423,7 +483,7 @@
     bt.addEventListener('click', function () {
       state.size = Number(bt.getAttribute('data-size')); store('rt_size', String(state.size));
       store('rt_hint', '1'); $('sizeHint').hidden = true;
-      renderStatic(); toast(T[state.lang].textSizeN[state.size - 1]);
+      renderStatic(); syncTopbar(); toast(T[state.lang].textSizeN[state.size - 1]);
     });
   });
   if (!store('rt_hint') && state.size === 1) {

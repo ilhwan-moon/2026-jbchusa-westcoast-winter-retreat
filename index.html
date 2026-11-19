@@ -92,33 +92,34 @@
 
     <!-- ② 말씀 · 장소 -->
     <section class="view" id="v-word" data-view="word" hidden>
-      <section class="card">
+      <nav class="toc" data-toc="word"></nav>
+      <section class="card" id="sec-word-sermons">
         <h2 class="eyebrow"><span class="ico" data-ico="bible"></span><span data-i18n="mainSermons"></span></h2>
         <ol class="sermons" id="sermonList"></ol>
         <ul class="bullets" id="sermonNotes"></ul>
       </section>
-      <section class="card">
+      <section class="card" id="sec-word-places">
         <h2 class="eyebrow"><span class="ico" data-ico="pin"></span><span data-i18n="places"></span></h2>
         <ol class="places" id="placeList"></ol>
         <p class="note" id="buildingNote"></p>
       </section>
-      <section class="card">
+      <section class="card" id="sec-word-seminar">
         <h2 class="eyebrow"><span class="ico" data-ico="book"></span><span data-i18n="seminar"></span></h2>
         <p class="lead" data-i18n="seminarLead"></p>
         <ul class="rows" id="seminarList"></ul>
         <h3 class="sub" data-i18n="seminarTimes"></h3>
         <ul class="rows times" id="seminarTimes"></ul>
       </section>
-      <section class="card">
+      <section class="card" id="sec-word-fellow">
         <h2 class="eyebrow"><span class="ico" data-ico="people"></span><span data-i18n="langFellow"></span></h2>
         <ul class="rows" id="fellowList"></ul>
       </section>
-      <section class="card counsel">
+      <section class="card counsel" id="sec-word-counsel">
         <h2 class="eyebrow"><span class="ico" data-ico="chat"></span><span data-i18n="counsel"></span></h2>
         <p id="counselText"></p>
         <a class="big-btn" id="counselBtn" target="_blank" rel="noopener"><span class="ico" data-ico="ext"></span><span data-i18n="counselBtn"></span></a>
       </section>
-      <section class="card pillars">
+      <section class="card pillars" id="sec-word-theme">
         <h2 class="eyebrow"><span class="ico" data-ico="heart"></span><span id="themeHead"></span></h2>
         <blockquote class="theme-verse"><p id="themeVerse"></p><cite id="themeRef"></cite></blockquote>
         <div class="pillar-grid" id="pillars"></div>
@@ -127,25 +128,26 @@
 
     <!-- ③ 생활 안내 -->
     <section class="view" id="v-info" data-view="info" hidden>
-      <section class="card">
+      <nav class="toc" data-toc="info"></nav>
+      <section class="card" id="sec-info-lodging">
         <h2 class="eyebrow"><span class="ico" data-ico="bed"></span><span data-i18n="lodging"></span></h2>
         <ul class="rows" id="lodgingList"></ul>
         <ul class="warn" id="lodgingRules"></ul>
       </section>
-      <section class="card">
+      <section class="card" id="sec-info-rules">
         <h2 class="eyebrow"><span class="ico" data-ico="bell"></span><span data-i18n="rules"></span></h2>
         <ul class="bullets rules" id="ruleList"></ul>
       </section>
-      <section class="card">
+      <section class="card" id="sec-info-kids">
         <h2 class="eyebrow"><span class="ico" data-ico="child"></span><span id="kidsTitle"></span></h2>
         <ul class="bullets rules" id="kidsList"></ul>
       </section>
-      <section class="card">
+      <section class="card" id="sec-info-supplies">
         <h2 class="eyebrow"><span class="ico" data-ico="check"></span><span data-i18n="supplies"></span></h2>
         <p class="lead" data-i18n="suppliesLead"></p>
         <ul class="checks" id="supplyList"></ul>
       </section>
-      <section class="card">
+      <section class="card" id="sec-info-cleanup">
         <h2 class="eyebrow"><span class="ico" data-ico="broom"></span><span data-i18n="cleanup"></span></h2>
         <p class="lead" data-i18n="cleanupLead"></p>
         <ul class="rows" id="cleanupList"></ul>
@@ -157,8 +159,9 @@
       <a class="emergency" id="emBtn">
         <span class="em-k"><span class="ico" data-ico="medical"></span><span data-i18n="emergency"></span></span>
         <span class="em-who" id="emWho"></span>
-        <span class="em-tel" id="emTel"></span>
+        <span class="em-tel"><span class="ico" data-ico="phone"></span><span id="emTel"></span></span>
         <span class="em-note" id="emNote"></span>
+        <span class="em-tap" data-i18n="callTap"></span>
       </a>
       <a class="callcard" id="inqBtn">
         <span class="cc-k" id="inqNote"></span>
@@ -167,6 +170,7 @@
       </a>
       <section class="card">
         <h2 class="eyebrow"><span class="ico" data-ico="people"></span><span data-i18n="depts"></span></h2>
+        <p class="lead" data-i18n="callTap"></p>
         <ul class="depts" id="deptList"></ul>
       </section>
       <section class="card">
