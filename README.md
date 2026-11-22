@@ -34,3 +34,10 @@
 - 첫 화면 「전체 말씀 · 대강당」: 말씀 1~4 날짜·시간, 다음 말씀 표시, 시작 30분 전부터 「⏰ ○분 후 시작」(`app.js`의 `SOON`)
 - 일정: 날짜별 보기 / 전체 일정표(3일 한 표) 전환, 27·28·29일에는 그날 자동 선택
 - 은은한 눈꽃 효과(`snow.js`). 휴대폰의 「동작 줄이기」 설정이면 꺼집니다.
+
+## 사용법 영상 (홈 화면 바로가기 안내)
+- 4개 언어: `video/howto_ko.mp4`, `howto_en.mp4`, `howto_es.mp4`, `howto_zh.mp4` (세로 1080×1920, 약 95초)
+- 아이폰 사파리 · 아이폰 크롬 · 안드로이드 · 카톡에서 홈 화면에 추가하는 방법을 단계별로 보여 줍니다.
+- 다시 만들기: 사이트를 `python3 -m http.server 8765`로 띄운 뒤
+  `node video/capture.js` (앱 화면 캡처) → `python3 video/bgm.py 95.3` (배경음악: Amazing Grace, 직접 합성) → `node video/record.js ko` (언어별)
+- 장면과 자막은 `video/howto.html`에서 고칩니다.
