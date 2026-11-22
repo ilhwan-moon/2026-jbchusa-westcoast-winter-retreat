@@ -6,7 +6,7 @@
 
   var T = {
     ko: {
-      counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상 보기', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
+      howtoBtn: '사용법 영상 보기', howtoTitle: '홈 화면에 추가하는 방법', counselBtnShort: '상담 신청하기', counselSub: '전도·생활 상담', videoBtn: '홍보 영상 보기', videoSub: '바로 재생', videoTitle: '2026 동계수련회 홍보 영상', videoOpen: '유튜브 앱에서 보기',
       noticeClose: '닫기', noticeLabel: '공지', soonIn: '{n}분 후 시작', sermonsAt: '전체 말씀 · 대강당', nextSermon: '다음 말씀', viewDay: '날짜별 보기', viewTable: '전체 일정표', tableNote: '시간은 오후·오전 표시 없이 줄였습니다. 칸을 누르면 그날 자세한 일정으로 갑니다.',
       sub: '미주서부 · 11/27~29', ok: '알겠어요', sizeHint: '글씨가 작으면 오른쪽 위 국기 버튼을 눌러 글씨 크기를 바꾸세요', settings: '설정', language: '언어', screenMode: '화면', done: '완료', setBtn: '설정', themeOpt: { light: '밝게', dark: '어둡게', auto: '자동' },
       textSize: '글씨 크기', textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'], themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' },
@@ -27,7 +27,7 @@
       inappTitle: '먼저 사파리/크롬으로 열어 주세요', inappSteps: ['오른쪽 위(또는 아래) <b>메뉴</b>를 누르세요', '<b>「다른 브라우저로 열기」</b> 또는 <b>「Safari로 열기」</b>를 누르세요', '열린 화면에서 이 버튼을 다시 누르세요'],
     },
     en: {
-      counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch the promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
+      howtoBtn: 'Watch the how-to video', howtoTitle: 'How to add to your Home Screen', counselBtnShort: 'Counseling sign-up', counselSub: 'Same as QR code', videoBtn: 'Watch the promo video', videoSub: 'Plays here', videoTitle: '2026 Winter Retreat promo video', videoOpen: 'Open in YouTube',
       noticeClose: 'Close', noticeLabel: 'Notice', soonIn: 'Starts in {n} min', sermonsAt: 'Christian Life Seminars · Main Hall', nextSermon: 'Next', viewDay: 'By day', viewTable: 'Full table', tableNote: 'Times are shortened (no AM/PM). Tap a cell to see that day in detail.',
       sub: 'West Coast · Nov 27–29', ok: 'Got it', sizeHint: 'Text too small? Tap the flag button at the top right to change the size.', settings: 'Settings', language: 'Language', screenMode: 'Display', done: 'Done', setBtn: 'Settings', themeOpt: { light: 'Light', dark: 'Dark', auto: 'Auto' },
       textSize: 'Text size', textSizeN: ['Normal text', 'Large text', 'Extra large'], themeN: { auto: 'Theme: Auto', light: 'Theme: Light', dark: 'Theme: Dark' },
@@ -48,7 +48,7 @@
       inappTitle: 'Please open in Safari/Chrome first', inappSteps: ['Tap the <b>menu</b> at the top (or bottom) right', 'Tap <b>“Open in browser”</b> or <b>“Open in Safari”</b>', 'Then tap this button again'],
     },
     es: {
-      counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Ver video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
+      howtoBtn: 'Ver video de instrucciones', howtoTitle: 'Cómo agregar a la pantalla de inicio', counselBtnShort: 'Consejería', counselSub: 'Inscribirse (QR)', videoBtn: 'Ver video promocional', videoSub: 'Ver aquí', videoTitle: 'Video promocional del retiro 2026', videoOpen: 'Abrir en YouTube',
       noticeClose: 'Cerrar', noticeLabel: 'Aviso', soonIn: 'Empieza en {n} min', sermonsAt: 'Sermones · Salón Principal', nextSermon: 'Próximo', viewDay: 'Por día', viewTable: 'Tabla completa', tableNote: 'Horas abreviadas (sin a. m./p. m.). Toque una celda para ver el día en detalle.',
       sub: 'Costa Oeste · 27–29 nov', ok: 'Entendido', sizeHint: '¿Letra pequeña? Toque la bandera arriba a la derecha para cambiar el tamaño.', settings: 'Ajustes', language: 'Idioma', screenMode: 'Pantalla', done: 'Listo', setBtn: 'Ajustes', themeOpt: { light: 'Claro', dark: 'Oscuro', auto: 'Auto' },
       textSize: 'Tamaño de letra', textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'], themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' },
@@ -69,7 +69,7 @@
       inappTitle: 'Primero ábralo en Safari/Chrome', inappSteps: ['Toque el <b>menú</b> arriba (o abajo) a la derecha', 'Toque <b>«Abrir en el navegador»</b> o <b>«Abrir en Safari»</b>', 'Luego toque este botón otra vez'],
     },
     zh: {
-      counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 YouTube 中打开',
+      howtoBtn: '观看使用方法视频', howtoTitle: '如何添加到主屏幕', counselBtnShort: '报名商谈', counselSub: '同二维码', videoBtn: '观看宣传视频', videoSub: '点击播放', videoTitle: '2026 冬季培灵会宣传视频', videoOpen: '在 YouTube 中打开',
       noticeClose: '关闭', noticeLabel: '公告', soonIn: '{n}分钟后开始', sermonsAt: '全体话语 · 大礼堂', nextSermon: '下一场', viewDay: '按日期', viewTable: '总日程表', tableNote: '时间已简写（不标上午/下午）。点一下即可查看当天详细日程。',
       sub: '西海岸 · 11/27–29', ok: '知道了', sizeHint: '字太小？请点右上角的国旗按钮更改字体大小。', settings: '设置', language: '语言', screenMode: '画面', done: '完成', setBtn: '设置', themeOpt: { light: '明亮', dark: '深色', auto: '自动' },
       textSize: '字体大小', textSizeN: ['标准字体', '大字体', '特大字体'], themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' },
@@ -577,6 +577,20 @@
   $('videoClose').addEventListener('click', function () { $('videoDialog').close(); });
   $('videoDialog').addEventListener('close', function () { $('videoFrame').src = 'about:blank'; });   // 닫으면 소리도 멈춤
   $('videoDialog').addEventListener('click', function (e) { if (e.target === $('videoDialog')) $('videoDialog').close(); });
+  // 사용법 영상: 언어에 맞는 영상을 누를 때만 불러옴
+  document.querySelectorAll('[data-howto]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var v = $('howtoVideo'), src = 'video/howto_' + state.lang + '.mp4';
+      if (v.getAttribute('src') !== src) v.setAttribute('src', src);
+      if ($('installDialog').open) $('installDialog').close();
+      $('howtoDialog').showModal();
+      try { v.currentTime = 0; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } catch (e) {}
+    });
+  });
+  function closeHowto() { try { $('howtoVideo').pause(); } catch (e) {} $('howtoDialog').close(); }
+  $('howtoClose').addEventListener('click', closeHowto);
+  $('howtoDialog').addEventListener('close', function () { try { $('howtoVideo').pause(); } catch (e) {} });   // 닫으면 소리도 멈춤
+  $('howtoDialog').addEventListener('click', function (e) { if (e.target === $('howtoDialog')) closeHowto(); });
   $('qrClose').addEventListener('click', function () { $('qrDialog').close(); });
 
   /* ── 다시 열었을 때 자동 새로고침 ──

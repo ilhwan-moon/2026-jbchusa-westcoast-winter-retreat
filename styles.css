@@ -444,3 +444,11 @@ dialog.set-dlg[open] { animation: sheetUp .22s ease-out; }
 /* 홈 화면 앱(아이폰): 화면 맨 위 시계·배터리 줄 아래로 내용이 들어가지 않게 */
 .daytabs::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: env(safe-area-inset-top); background: var(--bg); }
 .wrap { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+
+/* 사용법 영상 버튼 (작게) */
+.howto-link { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; margin: 0 auto 10px; padding: 0 .9rem; border-radius: 999px; border: 1.5px solid var(--blue); background: transparent; color: var(--blue); font-weight: 700; font-size: .95rem; cursor: pointer; }
+.howto-link .ico svg { width: 20px; height: 20px; }
+.ins-box .howto-link { display: flex; margin: 0 auto 12px; }
+/* 사용법 영상 창 (세로 영상) */
+dialog.howto-dlg { width: min(440px, 96vw); max-width: 96vw; padding: 0; background: #111; color: #fff; }
+dialog.howto-dlg video { display: block; width: 100%; max-height: calc(100dvh - 110px); aspect-ratio: 9 / 16; background: #000; }
