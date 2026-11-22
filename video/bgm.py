@@ -82,7 +82,7 @@ def reverb(x, secs=2.6, mix=.3):
 L, R = reverb(L), reverb(R)
 n = int(SR * TOTAL); L, R = L[:n], R[:n]; t = np.arange(n) / SR
 fade = np.minimum(1, t / 1.5) * np.clip((TOTAL - t) / 3, 0, 1); L *= fade; R *= fade
-pk = max(abs(L).max(), abs(R).max()); L, R = L / pk * .8, R / pk * .8
+pk = max(abs(L).max(), abs(R).max()); L, R = L / pk * .36, R / pk * .36   # 배경음악은 작게 (말소리 없는 안내 영상이지만 조용히)
 with wave.open('bgm.wav', 'wb') as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.stack([L, R], 1) * 32767).astype('<i2').tobytes())
 print('bgm.wav', round(TOTAL, 1), 's')
