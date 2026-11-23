@@ -452,3 +452,78 @@ dialog.set-dlg[open] { animation: sheetUp .22s ease-out; }
 /* 사용법 영상 창 (세로 영상) */
 dialog.howto-dlg { width: min(440px, 96vw); max-width: 96vw; padding: 0; background: #111; color: #fff; }
 dialog.howto-dlg video { display: block; width: 100%; max-height: calc(100dvh - 110px); aspect-ratio: 9 / 16; background: #000; }
+
+/* ── 글씨 굵기 정리: 꼭 필요한 곳만 굵게 ──
+   아주 굵게(800): 지금 하는 일 · 남은 시간 표시 · 오늘/고른 탭
+   굵게(700):      칸 제목 · 말씀 제목 · 날짜 · 전화번호 · 주의 문구
+   보통 굵기(500·600): 일정 이름 · 표 안의 글 · 메뉴 · 버튼
+   본문(400):      설명 · 이름 · 장소 */
+.eyebrow { font-weight: 700; }
+.hero-count, .hero-date { font-weight: 700; }
+.hero-theme-t, .hero-place { font-weight: 500; }
+.now-k { font-weight: 600; }
+.now-t small { font-weight: 600; }
+.now-time { font-weight: 500; }
+.now-place { font-weight: 600; }
+.now-done { font-weight: 500; }
+.daytabs button { font-weight: 600; }
+.daytabs button[aria-selected="true"] { font-weight: 800; }
+.i-time { font-weight: 500; }
+.i-title { font-weight: 500; }
+.s-label { font-weight: 600; }
+.s-meta b { font-weight: 600; }
+.s-link, .others summary { font-weight: 600; }
+.live-tag { font-weight: 700; }
+.rk { font-weight: 500; }
+.rv b { font-weight: 600; }
+.warn { font-weight: 500; }
+.warn li { font-weight: 500; }
+.warn li b { font-weight: 700; }
+.rules li { font-weight: 400; }
+.sn, .pn, .sq-what small { font-weight: 700; }
+.big-btn { font-weight: 700; }
+.checks button { font-weight: 500; }
+.cc-k { font-weight: 700; }
+.cc-who { font-weight: 600; }
+.cc-tel { font-weight: 700; }
+.dk { font-weight: 600; }
+.dt { font-weight: 700; }
+.venue-name { font-weight: 700; }
+.btn { font-weight: 600; }
+.bottomnav a { font-weight: 500; }
+.bottomnav a[aria-current="page"] { font-weight: 700; }
+.qr-title, .ins-title { font-weight: 700; }
+.sq-when { font-weight: 500; }
+.sq-when b { font-weight: 700; }
+.sq-tag { font-weight: 700; }
+.viewseg button { font-weight: 600; }
+.viewseg button[aria-pressed="true"] { font-weight: 800; }
+.thead { font-weight: 700; }
+.tt { font-weight: 500; }
+.tl { font-weight: 600; }
+.tn { font-weight: 500; }
+.tcell.k-sermon .tn { font-weight: 700; }
+.video-link, .howto-link { font-weight: 600; }
+.notice { font-weight: 500; }
+.notice b { font-weight: 700; }
+.set-btn { font-weight: 700; }
+.set-langs button, .set-sizes button, .set-themes button { font-weight: 500; }
+.set-langs button[aria-pressed="true"], .set-sizes button[aria-pressed="true"], .set-themes button[aria-pressed="true"] { font-weight: 700; }
+.set-sizes small, .set-themes small { font-weight: 500; }
+.q-txt b { font-weight: 700; }
+.q-txt small { font-weight: 400; }
+.install-txt b { font-weight: 700; }
+.install-txt small { font-weight: 400; }
+.seg button { font-weight: 600; }
+.size-hint { font-weight: 600; }
+/* 2차: 일반 글은 본문 굵기로, 강조할 곳만 굵게 */
+.brand-name { font-weight: 700; }
+.i-title, .tn, .rk, .checks button, .sq-when, .now-time, .now-done, .set-langs button, .set-sizes small, .set-themes small, .notice, .warn, .warn li { font-weight: 400; }
+.rv b, .dk, .cc-who, .s-meta b, .now-place, .tl, .s-label, .s-link, .others summary, .sq-when b, .now-k, .now-t small, .q-txt small { font-weight: 500; }
+.cc-tel, .dt { font-weight: 600; }
+.i-title { color: var(--ink); }
+.sched .k-praise .i-title, .sched .k-fellow .i-title { font-weight: 600; }
+.sched .live .i-title { font-weight: 700; }
+.bottomnav a { font-weight: 500; }
+.bottomnav a[aria-current="page"] { font-weight: 700; }
+.now-k { font-weight: 600; }
